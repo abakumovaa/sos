@@ -4,6 +4,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -236,7 +238,7 @@ a:hover {
 .story__container {
     display: flex;
     position: absolute;
-    bottom: 0px;
+    bottom: 310px;
 }
 
 .story__link {
@@ -280,6 +282,8 @@ a:hover {
 .about__container {
     margin-left: 120px;
     position: relative;
+    padding: 0;
+    margin-right: 0;
 }
 
 .about__title {
@@ -297,7 +301,7 @@ a:hover {
     position: absolute;
     left: 15px;
     top: 200px;
-    width: 711px; 
+    width: 650px; 
     height: 3px; 
     background-color: var(--text-color);
     
@@ -330,3 +334,67 @@ a:hover {
     margin-top: 20px;
 }
 
+/* --------- ABOUT SLIDER --------- */
+
+.slider__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-left: 0;
+    margin-right: 136px;
+    margin-top: 200px;
+}
+
+.slider__container-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    width: 503px;
+    height: 610px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s ease-in-out;
+}
+
+.slider__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.arrow-left {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.arrow-right {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.block {
+    display: block;
+}
+
+.pagination-circle {
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--text-color);
+}
+
+.slider__container-bottom {
+    display: flex;
+    column-gap: 52px;
+}
