@@ -66,8 +66,21 @@ a:hover {
     background-size: cover;
 }
 
-.visibly-hidden {
-    visibility: hidden;
+.title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* ---------- HEADER -------------- */
@@ -199,20 +212,8 @@ a:hover {
     margin-bottom: 170px;
 }
 
-.home__title {
-    font-family: "Bebas Neue", sans-serif;
-    text-align: center;
-    font-size: 80px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
 
-.home__text {
-    font-family: "Bebas Neue", sans-serif;
-    text-align: center;
-    font-size: 24px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.home__subtitle {
     margin-bottom: 28px;
 }
 
@@ -287,13 +288,7 @@ a:hover {
 }
 
 .about__title {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-    letter-spacing: 3px;
-    color: var(--text-color);
     width: 420px;
-    line-height: 1;
 }
 
 .about__title::after {
@@ -304,22 +299,16 @@ a:hover {
     width: 650px; 
     height: 3px; 
     background-color: var(--text-color);
-    
 }
 
 .about__subtitle {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 2px;
-    color: var(--text-color);
+    text-align: left;
 }
 
 .about__text {
     font-family: "Open Sans", sans-serif;
     line-height: 22px;
     font-size: 18px;
-    color: var(--text-color);
     width: 365px;
     margin-top: 73px;
     margin-left: 307px;
@@ -397,4 +386,125 @@ a:hover {
 .slider__container-bottom {
     display: flex;
     column-gap: 52px;
+}
+
+
+/*------------ FEATURES --------*/
+
+.features {
+    width: 100%;
+    height: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("/img/features_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.features__container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.features__info {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.features__title {
+    text-align: left;
+}
+
+.features__subtitle {
+    text-align: left;
+}
+
+/* ---------- FEATURES ACCORDION ------------- */
+
+.accordion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 43%;
+    left: 87%;
+    transform: translateX(-50%);
+}
+
+.accordion__container {
+    margin-bottom: 20px;
+}
+
+.accordion__title {
+    position: relative;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    min-width: 450px;
+}
+
+.accordion__text p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 363px;
+}
+
+.accordion__text {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.accordion__title::before {
+    content: "";
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: -50px;
+    top: 15px;
+    overflow: hidden;
+}
+
+.accordion__title::after {
+    content: "";
+    position: absolute;
+    left: -44px;
+    top: 28px;
+    width: 2px;
+    height: 0;
+    background-color: var(--text-color);
+    transition: height 0.3s ease;
+}
+
+.accordion__container.active-accordion .accordion__title::before {
+    background-color: var(--text-color);
+}
+
+.accordion__container.active-accordion .accordion__text {
+    max-height: 77px;
+    background-color: none;
+}
+
+.accordion__container.active-accordion .accordion__title::after {
+    height: 140px; 
 }

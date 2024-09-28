@@ -1,9 +1,13 @@
+// Выпадающее меню
+
 const langBtn = document.querySelector('.header__language-btn');
 const langList = document.querySelector('.header__language-list');
 
 langBtn.addEventListener('click', function() {
     langList.classList.toggle('visibly-hidden');
 });
+
+// Слайдер about
 
 const arrowLeft = document.querySelector('.arrow-left');
 const arrowRight = document.querySelector('.arrow-right');
@@ -72,3 +76,13 @@ function previousSlide() {
 addPagination();
 arrowRight.addEventListener("click", nextSlide);
 arrowLeft.addEventListener("click", previousSlide);
+
+// Аккордеон
+
+const accordions = document.querySelectorAll(".accordion__container");
+
+accordions.forEach(accordion => {
+    accordion.addEventListener("click", () => {
+        accordion.classList.toggle("active-accordion");
+    })
+})
