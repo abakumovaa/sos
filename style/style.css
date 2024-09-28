@@ -532,7 +532,7 @@ a:hover {
 .requirements__sheet {
     position: absolute;
     top: 200%;
-    right: 60%;
+    right: 55%;
 }
 
 .requirements__list {
@@ -568,4 +568,162 @@ a:hover {
 
 .requirements__item-wide {
     grid-column: span 2;
+}
+
+/* -------------- QUOTES ----------- */
+
+.quotes {
+    width: 100%;
+    height: 960px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    /* flex-direction: column;  */
+    background-image: url("/img/quotes_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quotes__container {
+    height: 100%;
+    margin-left: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 166px;
+
+}
+
+.quotes__text {
+    font-family: "Open Sans", sans-serif;
+    line-height: 22px;
+    font-size: 18px;
+    width: 435px;
+    margin-bottom: 53px;
+}
+
+.quotes__subtitle {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.quotes__title {
+    margin-bottom: 35px;
+}
+
+.quotes__btn {
+    margin: 0;
+}
+
+/*---------------- QUOTES CARDS ---------*/
+
+.cards__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative; /* добавила */
+}
+
+.cards__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cards__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 480px;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.cards__item:nth-child(1) {
+    transform: translateX(60px);
+}
+
+.cards__item:nth-child(2) {
+    transform: translateX(-30px);
+}
+
+.cards__item:nth-child(3) {
+    transform: translateX(60px); 
+}
+
+.cards__link {
+    width: 280px;
+}
+
+.cards__link img {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+.cards__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+} 
+
+.cards__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.cards__subtitle {
+    position: absolute;
+    top: 45px;
+    left: -38px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    width: 300px;
+}
+
+.cards__text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cards__date {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255,255,255,0.5);
+}
+
+.circle {
+    width: 46px;
+    height: 46px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    left: 10px;
+    top: 3%;
 }
