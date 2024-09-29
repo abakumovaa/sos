@@ -59,6 +59,10 @@ a:hover {
     padding: 0 15px;
 }
 
+.visibly-hidden {
+    visibility: hidden;
+}
+
 .wrapper {
     background-image: url("/img/home_bg.jpg");
     background-position: center;
@@ -457,6 +461,7 @@ a:hover {
     letter-spacing: 2px;
     color: var(--accent-color);
     min-width: 450px;
+    cursor: pointer;
 }
 
 .accordion__text p {
@@ -731,16 +736,14 @@ a:hover {
 
 .newsletter {
     width: 100%;
-    height: 960px;
+    height: 725px;
     display: flex;
     align-items: center;
     justify-content: flex-end; 
     flex-direction: column;
     background-image: url("/img/news_bg.png");
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 0 150px 0;
 }
 
 .newsletter__container {
@@ -804,4 +807,78 @@ a:hover {
     position: absolute;
     right: 78%;
     top: 10%;
+}
+
+/* ------------ FOOTER --------------- */
+
+.footer {
+    background-color: #000;
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+}
+
+.footer__nav {
+    padding: 0;
+    margin: 0 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 10%;
+}
+
+.footer__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 50px;
+}
+
+.footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+.footer__logo {
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.footer__logo img {
+    height: 90px;
+    width: 90px;
+}
+
+.footer__copyright {
+    width: 100%;
+    height: 95px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__copyright-text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__copyright-docs {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 10%;
+    text-transform: uppercase;
 }
