@@ -87,6 +87,12 @@ a:hover {
     text-transform: uppercase;
 }
 
+picture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ---------- HEADER -------------- */
 
 .header__container {
@@ -118,6 +124,7 @@ a:hover {
 
 .nav-link {
     text-transform: uppercase;
+    color: var(--text-color);
 }
 
 .header__nav-right {
@@ -265,8 +272,6 @@ a:hover {
     width: 25px;
     height: 11px;
     background: url("../img/scroll_down.svg") no-repeat;
-
-
 }
 
 /* --------- ABOUT ----------- */
@@ -851,6 +856,7 @@ a:hover {
 .footer__logo {
     padding: 5px;
     margin-bottom: 30px;
+    margin-top: 20px
 }
 
 .footer__logo img {
