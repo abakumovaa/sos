@@ -1127,4 +1127,115 @@ picture img {
         flex-direction: column;
         align-items: center;
     }
+
+    .features {
+        height: 515px;
+        padding: 0px 20px;
+        padding-left: 0px;
+        background-size: cover;
+    }
+
+    .features__container {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .features__info {
+        top: 5%;
+        text-align: left;
+        margin-bottom: 20px;
+        right: -100%;
+    }
+
+    .features__title {
+        font-size: 33px;
+    }
+
+    .features__subtitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 160px;
+    }
+
+    .accordion {
+        top: 22%;
+        left: 7%;
+        width: 100%;
+        transform: none;
+    }
+
+    .accordion__container {
+        width: 320px;
+        margin-bottom: 10px;
+    }
+
+    .accordion__title {
+        font-size: 21px;
+        text-align: left;
+        max-width: 320px;
+    }
+
+    .accordion__title::before {
+        top: 10px;
+        left: -25px;
+    }
+
+    .accordion__title::after {
+        left: -19px;
+        top: 24px;
+    }
+
+    .accordion__container.active-accordion .accordion__title::after {
+        height: 107px;
+      }
+
+    .accordion__text p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .requirements {
+        width: 320px;
+        height: 719px;
+    }
+    
+    .requirements__container {
+        padding: 0;
+        margin-top: 68px;
+    }
+
+    .requirements__subtitle {
+        font-size: 18px;
+    }
+
+    .requirements__title {
+        font-size: 33px;
+        text-align: center;
+        width: 310px;
+    }
+
+    .requirements__sheet {
+        right: 3%;
+    }
+
+    .requirements__list {
+        width: 290px;
+        height: 348px;
+    }
+
+    .requirements__item {
+        padding: 10px;
+    }
+
+    .requirements__item-title {
+        font-size: 18px;
+        margin: 0 0 5px 0;
+    }
+
+    .requirements__item-text {
+        font-size: 14px;
+    }
+
 }
