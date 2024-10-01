@@ -1292,4 +1292,57 @@ picture img {
         transform: none;
     }
 
+    .newsletter {
+        width: 320px;
+        height: 523px;
+        background-position: center;
+    }
+
+    .newsletter__container {
+        width: 320px;
+        align-items: flex-end;
+        gap: 15px;
+    }
+
+    .newsletter__subtitle {
+        font-size: 18px;
+        padding-top: 44px;
+    }
+
+    .newsletter__title {
+        font-size: 33px;
+        margin-left: 100px;
+    }
+
+    .newsletter__text {
+        font-size: 14px;
+        width: 189px;
+    }
+
+    .newsletter__form-container {
+        margin-top: 0px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .newsletter__form-email {
+        width: 290px;
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .newsletter__form-text {
+        font-size: 12px;
+        width: 178px;
+        right: 33%;
+        top: 3%;
+    }
+
+    .newsletter__form-btn {
+        margin: 0;
+        width: 290px;
+        height: 44px;
+        font-size: 14px;
+    }
+
 }
