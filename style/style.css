@@ -1238,4 +1238,58 @@ picture img {
         font-size: 14px;
     }
 
+    .quotes {
+        width: 320px;
+        height: 984px;
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .quotes__container {
+        margin: 0;
+        padding-top: 35px;
+    }
+
+    .quotes__subtitle {
+        font-size: 18px;
+    }
+
+    .quotes__title {
+        font-size: 33px;
+        margin-bottom: 25px;
+    }
+
+    .quotes__text {
+        font-size: 14px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .quotes__btn {
+        width: 216px;
+        height: 44px;
+        font-size: 14px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    .cards__item {
+        width: 290px;
+        margin-bottom: 5px;
+        padding: 10px;
+        margin-left: 15px;
+    }
+
+    .cards__item:nth-child(1) {
+        transform: none;
+    }
+    
+    .cards__item:nth-child(2) {
+        transform: none;
+    }
+    
+    .cards__item:nth-child(3) {
+        transform: none;
+    }
+
 }
