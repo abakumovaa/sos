@@ -123,3 +123,28 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('wheel', handleScroll);
     window.addEventListener('touchmove', handleScroll);
 });
+
+// Всплывающее меню 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.header__menu-btn');
+    const navPopup = document.querySelector('.header__nav-popup');
+    
+    menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navPopup.classList.toggle('active-popup');
+    });
+
+    const popupLinks = document.querySelectorAll('.header__popup-link');
+    popupLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navPopup.classList.remove('active-popup');
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!navPopup.contains(e.target) && navPopup.classList.contains('active-popup')) {
+            navPopup.classList.remove('active-popup');
+        }
+    });
+});
