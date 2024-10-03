@@ -309,7 +309,7 @@ picture img {
 .story__container {
   display: flex;
   position: absolute;
-  bottom: 310px;
+  top: 110%;
 }
 
 .story__link {
@@ -333,6 +333,10 @@ picture img {
   background: url("../img/scroll_down.svg") no-repeat;
 }
 
+.story__link:visited {
+    color: var(--text-color);
+}
+
 /* --------- ABOUT ----------- */
 
 .about {
@@ -342,7 +346,7 @@ picture img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/img/about_bg.jpg");
+  background-image: url("/sos/img/about_bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -465,7 +469,7 @@ picture img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("/img/features_bg.jpg");
+  background-image: url("/sos/img/features_bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -586,7 +590,7 @@ picture img {
   align-items: center;
   justify-content: top;
   flex-direction: column;
-  background-image: url("/img/req_bg.jpg");
+  background-image: url("/sos/img/req_bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -646,7 +650,7 @@ picture img {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-image: url("/img/quotes_bg.jpg");
+  background-image: url("/sos/img/quotes_bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -803,7 +807,7 @@ picture img {
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-  background-image: url("/img/news_bg.png");
+  background-image: url("/sos/img/news_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
