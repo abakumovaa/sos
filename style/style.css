@@ -49,6 +49,7 @@ a:visited {
 
 a:hover {
   color: var(--accent-color);
+  transition: all 0.2s ease;
 }
 
 /* -------- ОСНОВНЫЕ СТИЛИ -------- */
@@ -103,7 +104,7 @@ picture img {
 /* ---------- HEADER -------------- */
 
 .header__container {
-  padding: 22px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,7 +116,13 @@ picture img {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 10%;
+}
+
+.header__logo img {
+  width: 55px;
+  height: 55px; /* 4 коммент, пофиксила размер лого в хедере */
+  object-fit: contain;
+  object-position: center;
 }
 
 .header__list {
@@ -125,8 +132,12 @@ picture img {
   padding: 0;
 }
 
+.header__item {
+  padding: 10px; /* 5 коммент, добавила паддинги и поменяла внешние отступы в навигацию хэдера (в футер тоже) */
+}
+
 .header__item:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 .nav-link {
@@ -200,9 +211,18 @@ picture img {
 
 .header__link-icon {
   margin-right: 17px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   position: relative;
+  padding: 5px;
+}
+
+.header__link-icon img {
+  transition:  all 0.2s ease;
+}
+
+.header__link-icon img:hover {
+  filter: brightness(0.8);
 }
 
 .header__language {
@@ -219,12 +239,17 @@ picture img {
   cursor: pointer;
   color: var(--text-color);
   border: none;
+  padding: 5px;
   padding-right: 25px;
   position: relative;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
-  letter-spacing: 10%;
+  transition: all 0.2s ease;
+}
+
+.header__language-btn:hover {
+  color: var(--accent-color);
 }
 
 .header__language-btn::after {
@@ -258,7 +283,6 @@ picture img {
   border: none;
   font-weight: 700;
   font-size: 12px;
-  letter-spacing: 10%;
 }
 
 .header__language-btn-select:hover {
@@ -281,6 +305,12 @@ picture img {
   display: flex;
   flex-direction: column;
   margin-bottom: 170px;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__title {
+  margin: 0 auto; /* 2 коммент, центрировала заголовок */
 }
 
 .home__subtitle {
@@ -291,7 +321,9 @@ picture img {
   background-color: var(--accent-color);
   color: var(--dark-color);
   border: none;
-  height: 60px;
+  min-height: 60px;
+  height: auto; /* 1 коммент, исправлена высота кнопки, убрала фиксированную */
+  padding: 5px 10px;
   width: 260px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
@@ -300,6 +332,7 @@ picture img {
   border-radius: 4px;
   margin: 0 auto;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
@@ -309,7 +342,7 @@ picture img {
 .story__container {
   display: flex;
   position: absolute;
-  top: 100%;
+  inset-block-end: 50px; /* 3 коммент, пофиксила позиционирование кнопки */
 }
 
 .story__link {
@@ -317,9 +350,10 @@ picture img {
   cursor: pointer;
   border: none;
   font-weight: 700;
+  color: var(--text-color); /* 3 коммент, пофиксила цвет кнопки */
   font-size: 12px;
-  letter-spacing: 10%;
   text-transform: uppercase;
+  padding: 5px;
   padding-bottom: 25px;
 }
 
@@ -333,9 +367,6 @@ picture img {
   background: url("../img/scroll_down.svg") no-repeat;
 }
 
-.story__link:visited {
-  color: var(--text-color);
-}
 
 /* --------- ABOUT ----------- */
 
@@ -365,6 +396,8 @@ picture img {
 
 .about__title {
   width: 420px;
+  position: relative;
+  padding-bottom: 10px; 
 }
 
 .about__title::after {
@@ -373,8 +406,8 @@ picture img {
   width: 750px;
   height: 3px;
   background-color: var(--text-color);
-  inset-inline: 0;
-  inset-block-start: 13rem;
+  left: 0; /* 6 коммент, пофиксила расположение псевдоэлемента */
+  bottom: 0;
 }
 
 .about__subtitle {
@@ -434,13 +467,25 @@ picture img {
 }
 
 .arrow-left {
-  margin-right: 20px;
+  margin-right: 15px;
   cursor: pointer;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.arrow-left:hover {
+  filter: brightness(0.7);
 }
 
 .arrow-right {
-  margin-left: 20px;
+  margin-left: 15px;
   cursor: pointer;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.arrow-right:hover {
+  filter: brightness(0.7);
 }
 
 .block {
@@ -519,7 +564,13 @@ picture img {
 }
 
 .accordion__container {
-  margin-bottom: 20px;
+  padding: 0 10px;
+  max-width: 460px; /* 8 коммент, вроде как пофиксила переполнение */
+}
+
+.accordion__container:not(:last-child) { 
+  /* 7 коммент, пофиксила отступы и поменяла разметку на семантически верную */
+  margin-bottom: 15px;
 }
 
 .accordion__title {
@@ -531,6 +582,8 @@ picture img {
   color: var(--accent-color);
   min-width: 450px;
   cursor: pointer;
+  padding: 5px;
+  transition: all 0.2s ease;
 }
 
 .accordion__text p {
@@ -554,20 +607,24 @@ picture img {
   width: 14px;
   height: 14px;
   position: absolute;
-  left: -50px;
-  top: 15px;
   overflow: hidden;
+  inset-inline: -25px;
+  inset-block: 20px;
 }
 
 .accordion__title::after {
   content: "";
   position: absolute;
-  left: -44px;
-  top: 28px;
   width: 2px;
   height: 0;
   background-color: var(--text-color);
   transition: height 0.3s ease;
+  left: -20px;
+  top: 35px;
+}
+
+.accordion__title:hover {
+  color: var(--text-color);
 }
 
 .accordion__container.active-accordion .accordion__title::before {
@@ -610,7 +667,7 @@ picture img {
 
 .requirements__sheet {
   align-self: flex-start;
-  padding-top: 120px;
+  margin-top: 120px; /* 9 коммент, поменяла паддинг на марджин */
 }
 
 .requirements__title {
@@ -630,6 +687,7 @@ picture img {
 .requirements__item {
   border: 1px solid #979797;
   padding-left: 18px;
+  padding: 5px 5px; /* 10 коммент, пофиксила паддинги таблицы */
   padding-top: 15px;
 }
 
@@ -732,7 +790,7 @@ picture img {
   flex-wrap: wrap;
   gap: 20px;
   background-color: rgba(255, 255, 255, 0.08);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   position: relative;
   margin-bottom: 15px;
@@ -758,8 +816,14 @@ picture img {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
+  padding: 5px;
+  transition: all 0.2 ease;
+}
+
+.cards__link img:hover {
+  filter: brightness(0.7);
 }
 
 .cards__img {
@@ -870,6 +934,10 @@ picture img {
   color: var(--accent-color);
 }
 
+.newsletter__form-email:placeholder-shown {   /* 11 коммент, накинула прозрачности плейсхолдеру */
+  opacity: 0.6;
+}
+
 .newsletter__form-email::placeholder {
   color: var(--accent-color);
   font-size: 18px;
@@ -922,13 +990,29 @@ picture img {
   gap: 50px;
 }
 
+.footer__item {
+  padding: 10px;
+}
+
 .footer__social {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 55px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
+}
+
+.footer__social-link {
+  padding: 5px;
+}
+
+.footer__social-link img {
+  transition: all 0.2 ease;
+}
+
+.footer__social-link img:hover {
+  filter: brightness(0.7);
 }
 
 .footer__logo {
@@ -940,6 +1024,8 @@ picture img {
 .footer__logo img {
   height: 90px;
   width: 90px;
+  object-fit: contain;
+  object-position: center; /* 12 коммент, пофиксила лого на футере (то же и на хэдер) */
 }
 
 .footer__copyright {
@@ -965,9 +1051,19 @@ picture img {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 10%;
   text-transform: uppercase;
 }
+
+.footer__copyright-docs a { /* 13 коммент, изменила разметку элементов */
+  color: var(--text-color);
+  padding: 5px;
+  transition: all 0.2 ease;
+}
+
+.footer__copyright-docs a:hover {
+  color: var(--accent-color);
+}
+
 
 /* ----------------- АДАПТИВ ---------------- */
 
@@ -1377,7 +1473,7 @@ picture img {
     margin-top: 20px;
     padding: 0px;
     top: 500px;
-    right: 230px;
+    right: 230px; /* поменять! */
   }
 
   .story__link {
