@@ -87,42 +87,42 @@ accordions.forEach(accordion => {
     })
 })
 
-// Скролл секции 
+// Скролл секции, убрала пока что его
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.section');
-    let currentSection = 0;
-    let isScrolling = false;
+// document.addEventListener('DOMContentLoaded', function() {
+//     const sections = document.querySelectorAll('.section');
+//     let currentSection = 0;
+//     let isScrolling = false;
 
-    function scrollToSection(index) {
-        isScrolling = true;
-        sections[index].scrollIntoView({ behavior: 'smooth' });
+//     function scrollToSection(index) {
+//         isScrolling = true;
+//         sections[index].scrollIntoView({ behavior: 'smooth' });
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1000);
-    }
+//         setTimeout(() => {
+//             isScrolling = false;
+//         }, 1000);
+//     }
 
-    function handleScroll(event) {
-        if (isScrolling) return;
-        const delta = event.deltaY || -event.wheelDelta || event.detail;
+//     function handleScroll(event) {
+//         if (isScrolling) return;
+//         const delta = event.deltaY || -event.wheelDelta || event.detail;
         
-        if (delta > 0) {
-            if (currentSection < sections.length - 1) {
-                currentSection++;
-                scrollToSection(currentSection);
-            }
-        } else {
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(currentSection);
-            }
-        }
-    }
+//         if (delta > 0) {
+//             if (currentSection < sections.length - 1) {
+//                 currentSection++;
+//                 scrollToSection(currentSection);
+//             }
+//         } else {
+//             if (currentSection > 0) {
+//                 currentSection--;
+//                 scrollToSection(currentSection);
+//             }
+//         }
+//     }
 
-    window.addEventListener('wheel', handleScroll);
-    window.addEventListener('touchmove', handleScroll);
-});
+//     window.addEventListener('wheel', handleScroll);
+//     window.addEventListener('touchmove', handleScroll);
+// });
 
 // Всплывающее меню 
 

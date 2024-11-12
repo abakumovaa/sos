@@ -60,7 +60,7 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 }
 
 .visibly-hidden {
@@ -132,10 +132,6 @@ picture img {
   padding: 0;
 }
 
-.header__item {
-  padding: 10px; /* 5 коммент, добавила паддинги и поменяла внешние отступы в навигацию хэдера (в футер тоже) */
-}
-
 .header__item:not(:last-child) {
   margin-right: 40px;
 }
@@ -143,6 +139,7 @@ picture img {
 .nav-link {
   text-transform: uppercase;
   color: var(--text-color);
+  padding: 10px; /* 5 коммент, добавила паддинги и поменяла внешние отступы в навигацию хэдера (в футер тоже) */
 }
 
 .header__nav-right {
@@ -292,12 +289,24 @@ picture img {
 /* --------- HOME ----------- */
 
 .home {
+  position: relative; /* зафиксировала стрелочку */
   width: 100%;
   height: 960px;
   padding-bottom: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.home::before { /* реализовала градиентную тень в первой секции */
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  inset-block: 90%;
+  inset-inline: 0px;
+  background: linear-gradient(0, #000, transparent);
 }
 
 .home__container {
@@ -361,7 +370,7 @@ picture img {
   content: "";
   position: absolute;
   top: 60%;
-  right: 35px;
+  right: 25px;
   width: 25px;
   height: 11px;
   background: url("../img/scroll_down.svg") no-repeat;
@@ -403,7 +412,7 @@ picture img {
 .about__title::after {
   content: "";
   position: absolute;
-  width: 750px;
+  width: 450px;
   height: 3px;
   background-color: var(--text-color);
   left: 0; /* 6 коммент, пофиксила расположение псевдоэлемента */
@@ -564,6 +573,7 @@ picture img {
 }
 
 .accordion__container {
+  position: relative;
   padding: 0 10px;
   max-width: 460px; /* 8 коммент, вроде как пофиксила переполнение */
 }
@@ -612,19 +622,13 @@ picture img {
   inset-block: 20px;
 }
 
-.accordion__title::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 0;
-  background-color: var(--text-color);
-  transition: height 0.3s ease;
-  left: -20px;
-  top: 35px;
-}
-
 .accordion__title:hover {
   color: var(--text-color);
+}
+
+.accordion__container.active-accordion {
+  margin-bottom: 0;
+  padding-bottom: 10px;
 }
 
 .accordion__container.active-accordion .accordion__title::before {
@@ -636,8 +640,20 @@ picture img {
   background-color: none;
 }
 
-.accordion__container.active-accordion .accordion__title::after {
-  height: 140px;
+.accordion__container::after { /* вроде как решила вопрос с линией аккордеона, привязав псевдоэлемент к контейнеру, а не title */
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 2px;
+  top: 35px;
+  bottom: 0;
+  left: -10px;
+  background-color: var(--text-color);
+  transition: height 0.3s ease;
+}
+
+.accordion__container.active-accordion::after {
+  height: 90%;
 }
 
 /* ------------------- REQUIREMENTS ----------- */
@@ -687,7 +703,7 @@ picture img {
 .requirements__item {
   border: 1px solid #979797;
   padding-left: 18px;
-  padding: 5px 5px; /* 10 коммент, пофиксила паддинги таблицы */
+  padding: 10px 10px; /* пофиксила паддинги таблицы */
   padding-top: 15px;
 }
 
@@ -801,11 +817,11 @@ picture img {
 }
 
 .cards__item:nth-child(2) {
-  transform: translateX(-30px);
+  transform: translateX(-60px);
 }
 
 .cards__item:nth-child(3) {
-  transform: translateX(60px);
+  transform: translateX(20px); /* пофиксила отступ */
 }
 
 .cards__link {
@@ -814,8 +830,8 @@ picture img {
 
 .cards__link img {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 0;
+  inset-block: 10px; /* вроде как пофиксила иконку в карточке, отступы */
   width: 29px;
   height: 29px;
   padding: 5px;
@@ -839,6 +855,7 @@ picture img {
   letter-spacing: 2px;
   font-weight: 600;
   color: var(--accent-color);
+  text-transform: uppercase;
 }
 
 .cards__subtitle {
@@ -883,6 +900,7 @@ picture img {
 .newsletter {
   width: 100%;
   height: 725px;
+  padding: 120px; /* пофиксила отступы */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -893,7 +911,7 @@ picture img {
 }
 
 .newsletter__container {
-  margin-right: 70px;
+  margin-right: 0; /* исправила поплывшую форму */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -924,7 +942,7 @@ picture img {
 .newsletter__form-email {
   width: 367px;
   height: 60px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   padding-top: 27px;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
@@ -934,13 +952,14 @@ picture img {
   color: var(--accent-color);
 }
 
-.newsletter__form-email:placeholder-shown {   /* 11 коммент, накинула прозрачности плейсхолдеру */
+/* .newsletter__form-email:placeholder-shown {   11 коммент, накинула прозрачности плейсхолдеру
   opacity: 0.6;
-}
+} */
 
 .newsletter__form-email::placeholder {
   color: var(--accent-color);
   font-size: 18px;
+  opacity: 0.6;
 }
 
 .newsletter__form-email:focus {
@@ -955,8 +974,8 @@ picture img {
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  right: 78%;
-  top: 10%;
+  inset-block: 7px;
+  inset-inline: 20px; /* поменяла отступы */
 }
 
 /* ------------ FOOTER --------------- */
@@ -990,10 +1009,6 @@ picture img {
   gap: 50px;
 }
 
-.footer__item {
-  padding: 10px;
-}
-
 .footer__social {
   display: flex;
   align-items: center;
@@ -1005,14 +1020,28 @@ picture img {
 
 .footer__social-link {
   padding: 5px;
+  color: inherit;
+  transition: color 0.2s ease;
 }
 
-.footer__social-link img {
-  transition: all 0.2 ease;
+.footer__social-link:hover {
+  transition: color 0.2s ease;
 }
 
-.footer__social-link img:hover {
-  filter: brightness(0.7);
+.facebook-link:hover {
+  color: #094798; 
+}
+
+.twitter-link:hover {
+  color: #53bbfc;
+}
+
+.youtube-link:hover {
+  color: #FF1313;
+}
+
+.twitch-link:hover {
+  color: #9146ff;
 }
 
 .footer__logo {
@@ -1066,6 +1095,12 @@ picture img {
 
 
 /* ----------------- АДАПТИВ ---------------- */
+
+/* @media (min-width: 1041px) and (max-width: 1329px) {
+  .about__title::after {
+    width: 450px;
+}
+} */
 
 @media (width <= 1192px) {
   .quotes {
@@ -1134,12 +1169,6 @@ picture img {
 
   .about__title {
     text-align: left;
-  }
-
-  .about__title::after {
-    left: 20px;
-    width: auto;
-    inset-block-start: 15rem;
   }
 
   .about__text {
@@ -1273,10 +1302,6 @@ picture img {
 
   .about__title {
     font-size: 60px;
-  }
-
-  .about__title::after {
-    inset-block-start: 12rem;
   }
 
   .requirements__title {
@@ -1516,8 +1541,6 @@ picture img {
   }
 
   .about__title::after {
-    top: 130px;
-    left: 20px;
     width: 306px;
   }
 
