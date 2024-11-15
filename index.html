@@ -10,125 +10,125 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/variables.css" />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <header class="header">
-      <div class="wrapper">
+      <div class="header__wrapper">
         <div class="container header__container">
           <a class="logo header__logo" href="#">
             <picture>
               <source srcset="./img/logo.svg" type="image/svg+xml" />
-              <img src="./img/logo.png" alt="Logotype" />
+              <img src="./img/logo.png" alt="Logotype" class="logo__img"/>
             </picture>
           </a>
           <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item">
-                <a class="header__link nav-link" href="#home">main</a>
+                <a class="header__link nav-link" href="#home">Main</a>
               </li>
               <li class="header__item">
-                <a class="header__link nav-link" href="#about">about</a>
+                <a class="header__link nav-link" href="#about">About</a>
               </li>
               <li class="header__item">
-                <a class="header__link nav-link" href="#features"
-                  >game features</a
-                >
+                <a class="header__link nav-link" href="#features">
+                  Game features
+                </a>
               </li>
               <li class="header__item">
-                <a class="header__link nav-link" href="#requirements"
-                  >system requirements</a
-                >
+                <a class="header__link nav-link" href="#requirements">
+                  System requirements
+                </a>
               </li>
               <li class="header__item">
-                <a class="header__link nav-link" href="#quotes">quotes</a>
+                <a class="header__link nav-link" href="#quotes">Quotes</a>
               </li>
             </ul>
           </nav>
-          <div class="header__nav-right">
-            <div class="header__language">
-              <button class="header__language-btn">ENG</button>
-              <ul class="header__language-list visibly-hidden">
-                <li class="header__language-item">
-                  <button class="header__language-btn-select">RUS</button>
+          <div class="header__right">
+            <div class="language header__language">
+              <button class="language__button">ENG</button>
+              <ul class="language__list visibly-hidden">
+                <li class="language__item">
+                  <button class="language__value">RUS</button>
                 </li>
-                <li class="header__language-item">
-                  <button class="header__language-btn-select">FRA</button>
+                <li class="language__item">
+                  <button class="language__value">FRA</button>
                 </li>
-                <li class="header__language-item">
-                  <button class="header__language-btn-select">DEU</button>
+                <li class="language__item">
+                  <button class="language__value">DEU</button>
                 </li>
               </ul>
             </div>
             <div class="header__icons">
-              <a href="https://www.xbox.com" target="_blank" class="header__link-icon">
+              <a href="https://www.xbox.com" target="_blank" class="header__icon">
                 <picture>
                   <source srcset="./img/xbox_icon.svg" type="image/svg+xml" />
-                  <img src="./img/xbox_icon.png" alt="Xbox icon" />
+                  <img src="./img/xbox_icon.png" alt="Xbox icon" class="icon__img" />
                 </picture>
               </a>
-              <a href="https://store.steampowered.com/" target="_blank" class="header__link-icon">
+              <a href="https://store.steampowered.com/" target="_blank" class="header__icon">
                 <picture>
                   <source srcset="./img/steam_icon.svg" type="image/svg+xml" />
-                  <img src="./img/steam_icon.png" alt="Steam icon" />
+                  <img src="./img/steam_icon.png" alt="Steam icon" class="icon__img"/>
                 </picture>
               </a>
             </div>
-            <button class="header__menu-btn">&#9776;</button>
+            <button class="menu__button">&#9776;</button>
           </div>
         </div>
         <section class="home section" id="home">
           <div class="home__container container">
-            <h1 class="title home__title">survive at all costs</h1>
+            <h1 class="title home__title">Survive at all costs</h1>
             <p class="subtitle home__subtitle">
-              experience new social battle royale game
+              Experience new social battle royale game
             </p>
             <button class="home__btn btn">Buy now on Steam | $14.99</button>
           </div>
           <div class="story__container container">
-            <a href="#about" class="story__link">the story</a>
+            <a href="#about" class="story__link">The story</a>
           </div>
         </section>
       </div>
 
-      <nav class="header__nav-popup">
-        <ul class="header__popup-list">
-          <li class="header__popup-item">
-            <a href="#home" class="header__popup-link">Main</a>
+      <nav class="header__popup">
+        <ul class="popup__list">
+          <li class="popup__item">
+            <a href="#home" class="popup__link">Main</a>
           </li>
-          <li class="header__popup-item">
-            <a href="#about" class="header__popup-link">About</a>
+          <li class="popup__item">
+            <a hrefpopup__link">About</a>
           </li>
-          <li class="header__popup-item">
-            <a href="#features" class="header__popup-link">Game Features</a>
+          <li class="popup__item">
+            <a href="#features" class="popup__link">Game Features</a>
           </li>
-          <li class="header__popup-item">
-            <a href="#requirements" class="header__popup-link"
-              >System Requirements</a
-            >
+          <li class="popup__item">
+            <a href="#requirements" class="popup__link">
+              System Requirements
+            </a>
           </li>
-          <li class="header__popup-item">
-            <a href="#quotes" class="header__popup-link">Quotes</a>
+          <li class="popup__item">
+            <a href="#quotes" class="popup__link">Quotes</a>
           </li>
-          <li class="header__popup-item">
-            <a href="https://www.xbox.com" target="_blank" class="header__popup-link">
+          <li class="popup__item">
+            <a href="https://www.xbox.com" target="_blank" class="popup__link">
               <picture>
                 <source srcset="./img/xbox_icon.svg" type="image/svg+xml" />
                 <img
                   src="./img/xbox_icon.png"
                   alt="Xbox icon"
-                  class="header__popup-icon"
+                  class="popup__icon"
                 />
               </picture>
             </a>
-            <a href="https://store.steampowered.com/" target="_blank" class="header__popup-link">
+            <a href="https://store.steampowered.com/" target="_blank" class="popup__link">
               <picture>
                 <source srcset="./img/steam_icon.svg" type="image/svg+xml" />
                 <img
                   src="./img/steam_icon.png"
                   alt="Steam icon"
-                  class="header__popup-icon"
+                  class="popup__icon"
                 />
               </picture>
             </a>
@@ -139,8 +139,8 @@
     <main class="main">
       <section class="about section" id="about">
         <div class="about__container container">
-          <h3 class="subtitle about__subtitle">what is sos?</h3>
-          <h2 class="title about__title">social battle royale game</h2>
+          <h3 class="subtitle about__subtitle">What is sos?</h3>
+          <h2 class="title about__title">Social battle royale game</h2>
           <p class="about__text">
             Each round, <b>you</b> and <b>15</b> other contestants compete to
             escape a deadly island filled with monsters. The trick is:
@@ -148,12 +148,12 @@
             friendships with others to escape?
             <span class="separate-span"
               >Making the right decisions could be the difference between
-              <span class="underline-span">life and death.</span></span
-            >
+              <span class="about__text--accent">life and death.</span>
+            </span>
           </p>
         </div>
         <div class="slider__container container">
-          <div class="slider__container-top">
+          <div class="slider__top">
             <picture>
               <source srcset="./img/arrow_prev.svg" type="image/svg+xml" />
               <img
@@ -211,22 +211,22 @@
               />
             </picture>
           </div>
-          <div class="slider__container-bottom"></div>
+          <div class="slider__bottom"></div>
         </div>
       </section>
       <section class="features section" id="features">
         <div class="features__container container">
           <div class="features__info">
-            <h3 class="subtitle features__subtitle">what's so special?</h3>
-            <h2 class="title features__title">features</h2>
+            <h3 class="subtitle features__subtitle">What's so special?</h3>
+            <h2 class="title features__title">Features</h2>
           </div>
           <ul class="accordion">
             <li class="accordion__container container active-accordion">
               <div class="accordion__title">
-                <h3>survive at all costs</h3>
+                <h3>Survive at all costs</h3>
               </div>
               <div class="accordion__text">
-                <p>
+                <p class="accordion__content">
                   You have 30 minutes to find a relic, signal for extraction,
                   and grab one of three spots on the rescue chopper.
                 </p>
@@ -234,10 +234,10 @@
             </li>
             <li class="accordion__container container">
               <div class="accordion__title">
-                <h3>create allies and enemies</h3>
+                <h3>Create allies and enemies</h3>
               </div>
               <div class="accordion__text">
-                <p>
+                <p class="accordion__content">
                   You have 30 minutes to find a relic, signal for extraction,
                   and grab one of three spots on the rescue chopper.
                 </p>
@@ -245,10 +245,10 @@
             </li>
             <li class="accordion__container container">
               <div class="accordion__title">
-                <h3>impress the audience</h3>
+                <h3>Impress the audience</h3>
               </div>
               <div class="accordion__text">
-                <p>
+                <p class="accordion__content">
                   You have 30 minutes to find a relic, signal for extraction,
                   and grab one of three spots on the rescue chopper.
                 </p>
@@ -260,33 +260,33 @@
       <section class="requirements section" id="requirements">
         <div class="requirements__container container">
           <h3 class="subtitle requirements__subtitle">
-            can my computer run this game?
+            Can my computer run this game?
           </h3>
-          <h2 class="title requirements__title">system requirements</h2>
+          <h2 class="title requirements__title">System requirements</h2>
           <div class="requirements__sheet">
             <ul class="requirements__list">
               <li class="requirements__item">
-                <h3 class="requirements__item-title">OS:</h3>
+                <h3 class="requirements__item-title">Os:</h3>
                 <p class="requirements__item-text">
                   Windows 7 64-bit only <br />(No OSX support at this time)
                 </p>
               </li>
               <li class="requirements__item">
-                <h3 class="requirements__item-title">PROCESSOR:</h3>
+                <h3 class="requirements__item-title">Processor:</h3>
                 <p class="requirements__item-text">
                   Intel Core 2 Duo @ 2.4 GHZ or AMD Athlon X2 @ 2.8 GHZ
                 </p>
               </li>
               <li class="requirements__item">
-                <h3 class="requirements__item-title">MEMORY:</h3>
+                <h3 class="requirements__item-title">Memory:</h3>
                 <p class="requirements__item-text">8 GB RAM</p>
               </li>
               <li class="requirements__item">
-                <h3 class="requirements__item-title">STORAGE:</h3>
+                <h3 class="requirements__item-title">Storage:</h3>
                 <p class="requirements__item-text">8 GB available space</p>
               </li>
               <li class="requirements__item requirements__item-wide">
-                <h3 class="requirements__item-title">GRAPHICS:</h3>
+                <h3 class="requirements__item-title">Graphics:</h3>
                 <p class="requirements__item-text">
                   NVIDIA GeForce GTX 660 2GB or <br />AMD Radeon HD 7850 2GB
                   DirectX11 (Shader Model 5)
@@ -298,8 +298,8 @@
       </section>
       <section class="quotes section" id="quotes">
         <div class="quotes__container container">
-          <h3 class="subtitle quotes__subtitle">what people think?</h3>
-          <h2 class="title quotes__title">press quotes</h2>
+          <h3 class="subtitle quotes__subtitle">What people think?</h3>
+          <h2 class="title quotes__title">Press quotes</h2>
           <p class="quotes__text">
             Our goal is to create a product and service that you’re satisfied
             with and use it every day. This is why we’re constantly working on
@@ -310,7 +310,7 @@
         </div>
         <div class="cards__container">
           <ul class="cards__list">
-            <li class="cards__item">
+            <li class="cards__item cards__item--1">
               <div class="cards__header">
                 <picture>
                   <source srcset="./img/1_card.png" type="image/png" />
@@ -322,9 +322,9 @@
                   />
                 </picture>
                 <div class="circle"></div>
-                <h3 class="cards__title">evan lahti</h3>
+                <h3 class="cards__title">Evan lahti</h3>
                 <a href="https://x.com/" target="_blank" class="cards__link">
-                  <img
+                  <img class="cards__icon"
                     src="./img/twitter.svg"
                     alt="Twitter icon"
                     loading="lazy"
@@ -336,12 +336,12 @@
                 <p class="cards__text">
                   “One of my gaming highlights of the year.”
                 </p>
-                <time class="cards__date" datetime="2018-10-18"
-                  >October 18, 2018</time
-                >
+                <time class="cards__date" datetime="2018-10-18">
+                  October 18, 2018
+                </time>
               </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item cards__item--2">
               <div class="cards__header">
                 <picture>
                   <source srcset="./img/2_card.png" type="image/png" />
@@ -357,7 +357,7 @@
                 <a href="https://x.com/" target="_blank" class="cards__link">
                   <picture>
                     <source srcset="./img/twitter.svg" type="image/svg+xml" />
-                    <img
+                    <img class="cards__icon"
                       src="./img/twitter.png"
                       alt="Twitter icon"
                       loading="lazy"
@@ -371,16 +371,16 @@
                   “The next big thing in the world of streaming and survival
                   games.”
                 </p>
-                <time class="cards__date" datetime="2018-12-21"
-                  >December 21, 2018</time
-                >
+                <time class="cards__date" datetime="2018-12-21">
+                  December 21, 2018
+                </time>
               </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item cards__item--3">
               <div class="cards__header">
                 <picture>
                   <source srcset="./img/3_card.png" type="image/png" />
-                  <img
+                  <img 
                     src="./img/3_card.jpg"
                     alt="Third card photo"
                     class="cards__img"
@@ -392,7 +392,7 @@
                 <a href="https://x.com/" target="_blank" class="cards__link">
                   <picture>
                     <source srcset="./img/twitter.svg" type="image/svg+xml" />
-                    <img
+                    <img class="cards__icon"
                       src="./img/twitter.png"
                       alt="Twitter icon"
                       loading="lazy"
@@ -406,9 +406,9 @@
                   “Snoop Dogg Playing The Wildly Entertaining SOS Is
                   Ridiculous.”
                 </p>
-                <time class="cards__date" datetime="2018-12-24"
-                  >December 24, 2018</time
-                >
+                <time class="cards__date" datetime="2018-12-24">
+                  December 24, 2018
+                  </time>
               </div>
             </li>
           </ul>
@@ -416,24 +416,24 @@
       </section>
       <section class="newsletter section" id="newsletter">
         <div class="newsletter__container container">
-          <h3 class="subtitle newsletter__subtitle">want to stay in touch?</h3>
-          <h2 class="title newsletter__title">newsletter subscribe</h2>
+          <h3 class="subtitle newsletter__subtitle">Want to stay in touch?</h3>
+          <h2 class="title newsletter__title">Newsletter subscribe</h2>
           <p class="newsletter__text">
             In order to start receiving our news, all you have to do is enter
             your email address. Everything else will be taken care of by us. We
             will send you emails containing information about game. We don’t
             spam.
           </p>
-          <div class="newsletter__form-container">
-            <p class="newsletter__form-text">Your email address</p>
+          <div class="newsletter__form">
+            <p class="form__text">Your email address</p>
             <form>
               <input
                 type="email"
-                class="newsletter__form-email"
+                class="form__email"
                 placeholder="aliciliniavopir@gmail.com"
               />
             </form>
-            <button class="newsletter__form-btn btn">Subscribe now</button>
+            <button class="form__button btn">Subscribe now</button>
           </div>
         </div>
       </section>
@@ -443,34 +443,34 @@
         <a class="logo footer__logo" href="#">
           <picture>
             <source srcset="./img/big_logo.svg" type="image/svg+xml" />
-            <img src="./img/big_logo.png" alt="Logotype" loading="lazy" />
+            <img src="./img/big_logo.png" alt="Logotype" loading="lazy" class="footer__img"/>
           </picture>
         </a>
         <nav class="footer__nav">
           <ul class="footer__list">
             <li class="footer__item">
-              <a class="footer__link nav-link" href="#home">main</a>
+              <a class="footer__link nav-link" href="#home">Main</a>
             </li>
             <li class="footer__item">
-              <a class="footer__link nav-link" href="#about">about</a>
+              <a class="footer__link nav-link" href="#about">About</a>
             </li>
             <li class="footer__item">
-              <a class="footer__link nav-link" href="#features"
-                >game features</a
-              >
+              <a class="footer__link nav-link" href="#features">
+                Game features
+              </a>
             </li>
             <li class="footer__item">
-              <a class="footer__link nav-link" href="#requirements"
-                >system requirements</a
-              >
+              <a class="footer__link nav-link" href="#requirements">
+                System requirements
+                </a>
             </li>
             <li class="footer__item">
-              <a class="footer__link nav-link" href="#quotes">quotes</a>
+              <a class="footer__link nav-link" href="#quotes">Quotes</a>
             </li>
           </ul>
         </nav>
         <div class="footer__social">
-          <a href="https://www.facebook.com/" target="_blank" class="footer__social-link facebook-link">
+          <a href="https://www.facebook.com/" target="_blank" class="social__link facebook-link">
             <picture>
               <source srcset="./img/facebook.svg" type="image/svg+xml" />
               <img
@@ -480,7 +480,7 @@
               />
             </picture>
           </a>
-          <a href="https://www.twitter.com/" target="_blank" class="footer__social-link twitter-link">
+          <a href="https://www.twitter.com/" target="_blank" class="social__link twitter-link">
             <picture>
               <source srcset="./img/twitter_footer.svg" type="image/svg+xml" />
               <img
@@ -490,13 +490,13 @@
               />
             </picture>
           </a>
-          <a href="https://www.youtube.com/" target="_blank" class="footer__social-link youtube-link">
+          <a href="https://www.youtube.com/" target="_blank" class="social__link youtube-link">
             <picture>
               <source srcset="./img/youtube.svg" type="image/svg+xml" />
               <img src="./img/youtube.png" alt="Youtube logo" loading="lazy" />
             </picture>             
           </a>
-          <a href="https://www.twitch.com/" target="_blank" class="footer__social-link">
+          <a href="https://www.twitch.com/" target="_blank" class="social__link twitch-link">
             <picture>
               <source srcset="./img/twitch.svg" type="image/svg+xml" />
               <img src="./img/twitch.png" alt="Twitch logo" loading="lazy" />
@@ -504,15 +504,13 @@
           </a>
         </div>
         <div class="footer__copyright">
-          <p class="footer__copyright-text">
+          <p class="copyright__text">
             © 2018 Outpost Games, Inc. All Rights Reserved
           </p>
-          <p class="footer__copyright-docs">
-            <a href="/privacy-policy">Privacy Policy</a>
-            <span class="separator">|</span>
-            <a href="/terms-of-service">Terms of Service</a>
-            <span class="separator">|</span>
-            <a href="/code-of-conduct">Code of Conduct</a>
+          <p class="copyright__docs">
+            <a class="docs__link" href="/privacy-policy">Privacy Policy</a>
+            <a class="docs__link" href="/terms-of-service">Terms of Service</a>
+            <a class="docs__link" href="/code-of-conduct">Code of Conduct</a>
           </p>
         </div>
       </div>
