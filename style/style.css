@@ -117,6 +117,10 @@ picture img {
   background: url("../img/home_bg.jpg") center/cover no-repeat; /* /sos/img/home_bg.jpg */
 }
 
+.header__logo {
+  margin-left: 10px;
+}
+
 .header__container {
   padding: 20px 0;
   display: flex;
@@ -570,7 +574,7 @@ picture img {
   font-size: 18px;
   line-height: 22px;
   margin: 5px 0 20px;
-  width: 363px;
+  max-width: 363px;
 }
 
 .accordion__text {
@@ -859,7 +863,7 @@ picture img {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 100px;
+  margin-bottom: 250px;
   margin-right: 0; /* исправила поплывшую форму */
   height: 100%;
   gap: 20px;
@@ -873,7 +877,7 @@ picture img {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 22px;
-  width: 645px;
+  max-width: 645px; /* ограничение ширины чтобы контент не вылезал за рамки */
 }
 
 .newsletter__form {
@@ -930,6 +934,7 @@ picture img {
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .footer__nav {
@@ -953,8 +958,8 @@ picture img {
   align-items: center;
   justify-content: center;
   gap: 55px;
-  margin: 0 auto;
-  padding: 15px;
+  margin: 0;
+  padding: 15px 0 15px;
 }
 
 .social__link {
@@ -997,7 +1002,7 @@ picture img {
 .footer__copyright {
   width: 100%;
   max-height: 95px;
-  padding: 40px;
+  padding: 40px 0 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
@@ -1074,6 +1079,10 @@ picture img {
    {
     transform: none;
   }
+
+  .newsletter {
+    background-position: right;
+  }
 }
 
 @media (width <= 1040px) {
@@ -1147,6 +1156,10 @@ picture img {
     flex-direction: column;
     align-items: center;
   }
+
+  .footer__social {
+    margin: 0 auto;
+  }
 }
 
 @media (width <= 801px) {
@@ -1200,9 +1213,24 @@ picture img {
     width: 70px;
     height: 70px;
   }
+
+  .newsletter {
+    background-position: center;
+  }
+  
+  .newsletter__form {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 33px;
+    gap: 20px;
+  }
+
+  .form__text {
+    inset-inline: 160px;
+  }
 }
 
-@media (width <= 685px) {
+@media (width <= 758px) {
   .footer__logo {
     margin: 0 auto ;
   }
@@ -1270,7 +1298,7 @@ picture img {
     min-width: auto;
   }
 
-  .accordion__text {
+  .accordion__container.active-accordion .accordion__text {
     width: auto;
   }
 
@@ -1316,10 +1344,6 @@ picture img {
      padding: 20px;
   }
 
-  .newsletter__container {
-    margin: 0 auto;
-  }
-
   .newsletter__subtitle {
     font-size: 20px;
   }
@@ -1338,12 +1362,6 @@ picture img {
     right: 0;
   }
 
-  .newsletter__form {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 33px;
-  }
-
   .form__email {
     width: auto;
   }
@@ -1354,9 +1372,20 @@ picture img {
   }
 }
 
+@media (width <= 576px) {
+  .form__text {
+    inset-block: 5px;
+    inset-inline-start: 100px;
+  }
+
+  .about__title::after {
+    width: 300px;
+  }
+}
+
 @media (width <= 500px) {
   .header__popup {
-    width: 320px;
+    width: 100vw;
   }
 }
 
@@ -1383,13 +1412,21 @@ picture img {
   .features__container {
     padding: 10px;
   }
+
+  .form__email {
+    min-width: auto;
+  }
+
+  .docs__link:not(:last-child)::after {
+    inset-block: unset;
+  }
 }
 
 @media (max-width: 326px) {
   .home {
     padding: 20px;
     text-align: center;
-    min-height: 570px; /* отображение изменилось, проверить с макетом */
+    min-height: 570px;
   }
 
   .home__container {
@@ -1434,7 +1471,7 @@ picture img {
   }
 
   .about {
-    min-height: 689px; /* отображение изменилось, проверить с макетом */
+    min-height: 689px;
     padding: 0;
     align-items: unset;
     justify-content: unset;
@@ -1512,7 +1549,7 @@ picture img {
   }
 
   .features {
-    min-height: 515px; /* отображение изменилось, проверить с макетом */
+    min-height: 515px;
     padding: 0 20px;
     background-size: cover;
   }
@@ -1559,14 +1596,9 @@ picture img {
     left: -25px;
   }
 
-  /* ИЗМЕНИТЬ .accordion__title::after {
-    left: -19px;
-    top: 24px;
+  .accordion__container.active-accordion .accordion__text {
+    width: 250px;
   }
-
-  .accordion__container.active-accordion .accordion__title::after {
-    height: 107px;
-  } */
 
   .accordion__content {
     font-size: 14px;
@@ -1575,7 +1607,7 @@ picture img {
   }
 
   .requirements {
-    min-width: 320px; /* отображение изменилось, проверить с макетом */
+    min-width: 320px;
     min-height: 719px;
     padding: 0 15px;
   }
@@ -1598,10 +1630,11 @@ picture img {
   .requirements__sheet {
     padding-top: 40px;
     align-self: auto;
+    margin-top: 50px;
   }
 
   .requirements__list {
-    min-width: 290px; /* отображение изменилось, проверить с макетом */
+    min-width: 290px;
     min-height: 348px;
   }
 
@@ -1623,6 +1656,7 @@ picture img {
     min-height: 984px;
     flex-direction: column;
     align-items: unset;
+    padding: 40px 20px;
   }
 
   .quotes__container {
@@ -1668,7 +1702,7 @@ picture img {
 
   .newsletter {
     min-width: 320px;
-    min-height: 523px; /* отображение изменилось, проверить с макетом */
+    min-height: 523px;
     background-position: center;
   }
 
@@ -1677,21 +1711,25 @@ picture img {
     align-items: flex-end;
     gap: 15px;
     margin-right: 0;
+    margin-bottom: 0;
   }
 
   .newsletter__subtitle {
     font-size: 18px;
     padding-top: 44px;
+    margin-right: 60px;
   }
 
   .newsletter__title {
     font-size: 33px;
-    margin-left: 100px;
+    margin-left: 70px;
   }
 
   .newsletter__text {
     font-size: 14px;
     width: 189px;
+    margin-right: 60px;
+    margin-bottom: 10px;
   }
 
   .newsletter__form {
@@ -1724,7 +1762,7 @@ picture img {
 
   .footer {
     min-width: 320px;
-    min-height: 670px; /* приблизительное значение, надо сравнить с макетом */
+    min-height: 493px;
   }
 
   .footer__container {
@@ -1735,12 +1773,12 @@ picture img {
   .footer__logo {
     width: 50px;
     padding: 0;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   .footer__nav {
-    margin-bottom: 42px;
+    margin-bottom: 10px;
   }
 
   .footer__list {
@@ -1752,7 +1790,7 @@ picture img {
 
   .footer__social {
     gap: 45px;
-    margin-bottom: 42px;
+    margin-bottom: 10px;
   }
 
   .footer__copyright {
