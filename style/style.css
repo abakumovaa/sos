@@ -79,6 +79,14 @@ a:hover {
   margin: 0 auto;
 }
 
+.section__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
 .visibly-hidden {
   visibility: hidden;
   opacity: 0;
@@ -298,10 +306,21 @@ picture img {
   content: "";
   position: absolute;
   width: 100vw;
-  height: 100px;
-  inset-block: 90%;
+  height: 80px;
+  inset-block: 93%;
   inset-inline: 0;
-  background: linear-gradient(0, #000, transparent);
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 100%;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .home__container {
@@ -373,8 +392,30 @@ picture img {
 /* --------- ABOUT ----------- */
 
 .about {
+  position: relative;
   padding-top: 0;
   background: url("../img/about_bg.jpg") center/cover no-repeat;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 70px;
+  inset-block: 93%;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 100%;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .about__container {
@@ -460,7 +501,7 @@ picture img {
   display: none;
 }
 
-.arrow-left {
+.arrow-left, .arrow-right {
   margin-right: 15px;
   cursor: pointer;
   padding: 5px;
@@ -471,13 +512,6 @@ picture img {
 .arrow-right:hover 
 {
   filter: brightness(0.7);
-}
-
-.arrow-right {
-  margin-left: 15px;
-  cursor: pointer;
-  padding: 5px;
-  transition: all 0.2s ease;
 }
 
 .block {
@@ -504,10 +538,32 @@ picture img {
 /*------------ FEATURES --------*/
 
 .features {
+  position: relative;
   padding: 0 120px;
   display: flex;
   flex-direction: column;
   background: url("../img/features_bg.jpg") center/cover no-repeat;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 70px;
+  inset-block: 93%;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
+}
+
+.features::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 100%;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .features__container {
@@ -631,8 +687,30 @@ picture img {
 /* ------------------- REQUIREMENTS ----------- */
 
 .requirements {
+  position: relative;
   flex-direction: column;
   background: url("../img/req_bg.jpg") center/cover no-repeat;
+}
+
+.requirements::before { /* реализовала градиентную тень в первой секции */
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 93%;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
+}
+
+.requirements::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 100%;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .requirements__container {
@@ -692,8 +770,31 @@ picture img {
 /* -------------- QUOTES ----------- */
 
 .quotes {
+  position: relative;
   justify-content: flex-start;
   background: url("../img/quotes_bg.jpg") center/cover no-repeat;
+}
+
+.quotes::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 93%;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
+}
+
+.quotes::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 100%;
+  inset-inline: 0;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .quotes__container {
@@ -814,14 +915,14 @@ picture img {
 .cards__subtitle {
   position: absolute;
   top: 45px;
-  left: -38px;
+  left: 70px;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 22px;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  width: 300px;
+  text-align: left;
+  width: 100px;
 }
 
 .cards__text {
@@ -851,11 +952,23 @@ picture img {
 /* ---------- NEWLETTER ------------- */
 
 .newsletter {
+  position: relative;
   justify-content: flex-end;
   flex-direction: column;
   background-image: url("../img/news_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  inset-block: 93%;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 9999;
 }
 
 .newsletter__container {
@@ -866,7 +979,7 @@ picture img {
   margin-bottom: 250px;
   margin-right: 0; /* исправила поплывшую форму */
   height: 100%;
-  gap: 20px;
+  gap: 30px;
 }
 
 .newsletter__subtitle {
@@ -885,7 +998,14 @@ picture img {
   display: flex;
   flex-direction: row;
   gap: 17px;
-  margin-top: 63px;
+  margin-top: 30px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .form__email {
@@ -920,6 +1040,8 @@ picture img {
   position: absolute;
   inset-block: 7px;
   inset-inline: 20px; /* поменяла отступы */
+  width: 130px;
+  height: 14px;
 }
 
 /* ------------ FOOTER --------------- */
@@ -954,12 +1076,19 @@ picture img {
 }
 
 .footer__social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 55px;
   margin: 0;
   padding: 15px 0 15px;
+}
+
+.social__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.social__item {
+  padding: 0 10px;
 }
 
 .social__link {
@@ -1019,24 +1148,24 @@ picture img {
 }
 
 .copyright__docs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.docs__link:hover {
-  color: var(--accent-color);
-}
-
-.docs__link { /* 13 коммент, изменила разметку элементов */
+.copyright__item {
   position: relative;
   color: var(--text-color);
   padding: 5px;
   transition: all 0.2 ease;
 }
 
-.docs__link:not(:last-child)::after { /* реализовала сепараторы текста в футере через псевдоэлементы */
+.copyright__item:not(:last-child)::after {
   content: "";
   position: absolute;
   height: 15px;
@@ -1044,6 +1173,11 @@ picture img {
   width: 1px;
   inset-block: 7px;
   margin-left: 6px;
+}
+
+.docs__link {
+  color: var(--text-color);
+  padding: 5px;
 }
 
 /* ----------------- АДАПТИВ ---------------- */
@@ -1086,6 +1220,10 @@ picture img {
 }
 
 @media (width <= 1040px) {
+  .section__container {
+    flex-wrap: wrap;
+  }
+
   .home {
     padding-bottom: 0;
   }
@@ -1255,6 +1393,7 @@ picture img {
 
   .about__title {
     font-size: 60px;
+    width: 330px;
   }
 
   .requirements__title {
@@ -1405,6 +1544,14 @@ picture img {
     padding: 20px;
   }
 
+  .about__container {
+    padding: 0;
+  }
+
+  .about__title {
+    width: 300px;
+  }
+
   .accordion__title {
     font-size: 21px;
   }
@@ -1501,7 +1648,7 @@ picture img {
   }
 
   .about__title::after {
-    width: 306px;
+    width: 150px;
   }
 
   .about__text {

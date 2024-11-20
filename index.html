@@ -138,6 +138,7 @@
     </header>
     <main class="main">
       <section class="about section" id="about">
+        <div class="container section__container">
         <div class="about__container container">
           <h3 class="subtitle about__subtitle">What is sos?</h3>
           <h2 class="title about__title">Social battle royale game</h2>
@@ -212,6 +213,7 @@
             </picture>
           </div>
           <div class="slider__bottom"></div>
+        </div>
         </div>
       </section>
       <section class="features section" id="features">
@@ -297,6 +299,7 @@
         </div>
       </section>
       <section class="quotes section" id="quotes">
+        <div class="container section__container">
         <div class="quotes__container container">
           <h3 class="subtitle quotes__subtitle">What people think?</h3>
           <h2 class="title quotes__title">Press quotes</h2>
@@ -413,8 +416,10 @@
             </li>
           </ul>
         </div>
+      </div>
       </section>
       <section class="newsletter section" id="newsletter">
+        <div class="container section__container">
         <div class="newsletter__container container">
           <h3 class="subtitle newsletter__subtitle">Want to stay in touch?</h3>
           <h2 class="title newsletter__title">Newsletter subscribe</h2>
@@ -426,16 +431,17 @@
           </p>
           <div class="newsletter__form">
             <p class="form__text">Your email address</p>
-            <form>
+            <form class="form">
               <input
                 type="email"
                 class="form__email"
                 placeholder="aliciliniavopir@gmail.com"
               />
+              <button class="form__button btn">Subscribe now</button>
             </form>
-            <button class="form__button btn">Subscribe now</button>
           </div>
         </div>
+      </div>
       </section>
     </main>
     <footer class="footer">
@@ -470,48 +476,64 @@
           </ul>
         </nav>
         <div class="footer__social">
-          <a href="https://www.facebook.com/" target="_blank" class="social__link facebook-link">
-            <picture>
-              <source srcset="./img/facebook.svg" type="image/svg+xml" />
-              <img
-                src="./img/facebook.png"
-                alt="Facebook logo"
-                loading="lazy"
-              />
-            </picture>
-          </a>
-          <a href="https://www.twitter.com/" target="_blank" class="social__link twitter-link">
-            <picture>
-              <source srcset="./img/twitter_footer.svg" type="image/svg+xml" />
-              <img
-                src="./img/twitter_footer.png"
-                alt="Twitter logo"
-                loading="lazy"
-              />
-            </picture>
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" class="social__link youtube-link">
-            <picture>
-              <source srcset="./img/youtube.svg" type="image/svg+xml" />
-              <img src="./img/youtube.png" alt="Youtube logo" loading="lazy" />
-            </picture>             
-          </a>
-          <a href="https://www.twitch.com/" target="_blank" class="social__link twitch-link">
-            <picture>
-              <source srcset="./img/twitch.svg" type="image/svg+xml" />
-              <img src="./img/twitch.png" alt="Twitch logo" loading="lazy" />
-            </picture>
-          </a>
+          <ul class="social__list">
+            <li class="social__item">
+              <a href="https://www.facebook.com/" target="_blank" class="social__link facebook-link">
+                <picture>
+                  <source srcset="./img/facebook.svg" type="image/svg+xml" />
+                  <img
+                    src="./img/facebook.png"
+                    alt="Facebook logo"
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.twitter.com/" target="_blank" class="social__link twitter-link">
+                <picture>
+                  <source srcset="./img/twitter_footer.svg" type="image/svg+xml" />
+                  <img
+                    src="./img/twitter_footer.png"
+                    alt="Twitter logo"
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.youtube.com/" target="_blank" class="social__link youtube-link">
+                <picture>
+                  <source srcset="./img/youtube.svg" type="image/svg+xml" />
+                  <img src="./img/youtube.png" alt="Youtube logo" loading="lazy" />
+                </picture>             
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.twitch.com/" target="_blank" class="social__link twitch-link">
+                <picture>
+                  <source srcset="./img/twitch.svg" type="image/svg+xml" />
+                  <img src="./img/twitch.png" alt="Twitch logo" loading="lazy" />
+                </picture>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="footer__copyright">
           <p class="copyright__text">
             © 2018 Outpost Games, Inc. All Rights Reserved
           </p>
-          <p class="copyright__docs">
-            <a class="docs__link" href="/privacy-policy">Privacy Policy</a>
-            <a class="docs__link" href="/terms-of-service">Terms of Service</a>
-            <a class="docs__link" href="/code-of-conduct">Code of Conduct</a>
-          </p>
+          <ul class="copyright__docs">
+            <li class="copyright__item">
+              <a class="docs__link" href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li class="copyright__item">
+              <a class="docs__link" href="/terms-of-service">Terms of Service</a>
+            </li>
+            <li class="copyright__item">
+              <a class="docs__link" href="/code-of-conduct">Code of Conduct</a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
