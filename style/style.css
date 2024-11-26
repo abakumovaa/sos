@@ -257,14 +257,16 @@ picture img {
   transition: all 0.2s ease;
 }
 
-.language__button::after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: 8px;
-  width: 10px;
-  min-height: 7px;
-  background: url("../img/arrow.svg") center/cover no-repeat;
+.language__icon {
+  position: relative;
+  top: 12px;
+  left: -17px;
+  transition: stroke 0.2s ease;
+  cursor: pointer;
+}
+
+.language__icon:hover path {
+  stroke: var(--accent-color);
 }
 
 .language__list {
@@ -305,22 +307,12 @@ picture img {
 .home::before { /* реализовала градиентную тень в первой секции */
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  inset-block: 93%;
+  inset-block-end: 0;
   inset-inline: 0;
   background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
-}
-
-.home::after {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  height: 80px;
-  inset-block: 100%;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 9999;
+  z-index: 1;
 }
 
 .home__container {
@@ -365,7 +357,7 @@ picture img {
 .story__container {
   display: flex;
   position: absolute;
-  inset-block-end: 50px; /* 3 коммент, пофиксила позиционирование кнопки */
+  inset-block-end: 70px; /* 3 коммент, пофиксила позиционирование кнопки */
 }
 
 .story__link {
@@ -379,14 +371,18 @@ picture img {
   padding: 5px 5px 25px;
 }
 
-.story__link::after {
-  content: "";
-  position: absolute;
-  top: 60%;
-  right: 25px;
+.story__icon {
+  position: relative;
   width: 25px;
   height: 11px;
-  background: url("../img/scroll_down.svg") no-repeat;
+  transition: stroke 0.2s ease;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.story__icon:hover path {
+  stroke: var(--accent-color);
 }
 
 /* --------- ABOUT ----------- */
@@ -400,22 +396,22 @@ picture img {
 .about::before {
   content: "";
   position: absolute;
-  width: 100vw;
-  height: 70px;
-  inset-block: 93%;
+  width: 100%;
+  height: 80px;
+  inset-block-start: 0;
   inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 1;
 }
 
 .about::after {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  inset-block: 100%;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 9999;
+  inset-block-end: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 1;
 }
 
 .about__container {
@@ -487,8 +483,8 @@ picture img {
 }
 
 .slider {
-  width: 503px; /* исправить? */
-  height: 610px; /* исправить? */
+  width: 503px;
+  height: 610px; 
   overflow: hidden;
   border-radius: 10px;
   transition: 1s ease-in-out;
@@ -502,16 +498,24 @@ picture img {
 }
 
 .arrow-left, .arrow-right {
-  margin-right: 15px;
+  position: relative;
+  width: 18px;
+  height: 38px;
   cursor: pointer;
-  padding: 5px;
-  transition: all 0.2s ease;
+  transition: stroke 0.2s ease;
 }
 
-.arrow-left:hover,
-.arrow-right:hover 
-{
-  filter: brightness(0.7);
+.arrow-right {
+  margin-left: 15px;
+}
+
+.arrow-left {
+  margin-right: 15px;
+}
+
+.arrow-right:hover path,
+.arrow-left:hover path{ 
+  stroke: var(--accent-color);
 }
 
 .block {
@@ -548,22 +552,23 @@ picture img {
 .features::before {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 70px;
-  inset-block: 93%;
+  inset-block-start: 0;
   inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 1;
 }
 
 .features::after {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  inset-block: 100%;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 9999;
+  inset-block-end: 0;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 1;
 }
 
 .features__container {
@@ -645,7 +650,6 @@ picture img {
   width: 14px;
   height: 14px;
   position: absolute;
-  overflow: hidden;
   inset-inline: -25px;
   inset-block: 20px;
 }
@@ -664,7 +668,7 @@ picture img {
 }
 
 .accordion__container.active-accordion .accordion__text {
-  max-height: 77px;
+  max-height: none;
   background-color: transparent;
 }
 
@@ -681,7 +685,7 @@ picture img {
 }
 
 .accordion__container.active-accordion::after {
-  height: 90%;
+  height: calc(100% - 15px);
 }
 
 /* ------------------- REQUIREMENTS ----------- */
@@ -695,22 +699,23 @@ picture img {
 .requirements::before { /* реализовала градиентную тень в первой секции */
   content: "";
   position: absolute;
-  width: 100vw;
-  height: 80px;
-  inset-block: 93%;
+  width: 100%;
+  height: 70px;
+  inset-block-start: 0;
   inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 1;
 }
 
 .requirements::after {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  inset-block: 100%;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 9999;
+  inset-block-end: 0;
+  inset-inline: 0;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 1;
 }
 
 .requirements__container {
@@ -778,23 +783,23 @@ picture img {
 .quotes::before {
   content: "";
   position: absolute;
-  width: 100vw;
-  height: 80px;
-  inset-block: 93%;
+  width: 100%;
+  height: 70px;
+  inset-block-start: 0;
   inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 1;
 }
 
 .quotes::after {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  inset-block: 100%;
+  inset-block-end: 0;
   inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 9999;
+  background: linear-gradient(0, #0b0b0b, transparent);
+  z-index: 1;
 }
 
 .quotes__container {
@@ -896,6 +901,10 @@ picture img {
   filter: brightness(0.7);
 }
 
+.cards__picture {
+  position: relative;
+}
+
 .cards__img {
   width: 50px;
   height: 50px;
@@ -944,7 +953,6 @@ picture img {
   background-color: var(--accent-color);
   border-radius: 50%;
   position: absolute;
-  z-index: 1; /* пока под вопросом */
   left: 10px;
   top: 3px;
 }
@@ -963,12 +971,23 @@ picture img {
 .newsletter::before {
   content: "";
   position: absolute;
-  width: 100vw;
+  width: 100%;
+  height: 70px;
+  inset-block-start: 0;
+  inset-inline: 0;
+  background: linear-gradient(#0b0b0b, transparent);
+  z-index: 1;
+}
+
+.newsletter::after {
+  content: "";
+  position: absolute;
+  width: 100%;
   height: 80px;
-  inset-block: 93%;
+  inset-block-end: 0;
   inset-inline: 0;
   background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 9999;
+  z-index: 1;
 }
 
 .newsletter__container {
@@ -1172,7 +1191,7 @@ picture img {
   background-color: var(--text-color);
   width: 1px;
   inset-block: 7px;
-  margin-left: 6px;
+  inset-inline-end: 0;
 }
 
 .docs__link {
@@ -1260,8 +1279,8 @@ picture img {
     margin: 0 auto;
     padding-left: 0;
     align-self: auto;
-    max-width: 503px; /* исправить? */
-    max-height: 610px; /* исправить? */
+    max-width: 503px;
+    max-height: 610px;
   }
 
   .slider {
@@ -1366,9 +1385,7 @@ picture img {
   .form__text {
     inset-inline: 160px;
   }
-}
 
-@media (width <= 758px) {
   .footer__logo {
     margin: 0 auto ;
   }
@@ -1526,16 +1543,12 @@ picture img {
   .header__popup {
     width: 100vw;
   }
-}
 
-@media (width <= 486px) {
   .form__text {
     left: 23%;
     top: 6%;
   }
-}
 
-@media (width <= 440px) {
   .title {
     font-size: 50px;
   }
@@ -1566,6 +1579,68 @@ picture img {
 
   .docs__link:not(:last-child)::after {
     inset-block: unset;
+  }
+}
+
+@media (width <= 386px) {
+
+  .newsletter {
+    min-width: 320px;
+    min-height: 523px;
+    background-position: center;
+  }
+
+  .newsletter__container {
+    width: 320px;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 60px;
+  }
+
+  .newsletter__subtitle {
+    font-size: 18px;
+    padding-top: 44px;
+    margin-right: 60px;
+  }
+
+  .newsletter__title {
+    font-size: 33px;
+    margin-left: 70px;
+  }
+
+  .newsletter__text {
+    font-size: 14px;
+    width: 189px;
+    margin-right: 60px;
+    margin-bottom: 10px;
+  }
+
+  .newsletter__form {
+    margin-top: 0;
+    margin-right: 50px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form__email {
+    min-width: 260px;
+    min-height: 44px;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .form__text {
+    width: 178px;
+    inset-block: 3px;
+    inset-inline-start: 20px;
+  }
+
+  .form__button {
+    min-width: 260px;
+    min-height: 44px;
+    font-size: 14px;
+    padding: 5px;
+    margin-left: 0;
   }
 }
 
@@ -1602,10 +1677,8 @@ picture img {
   }
 
   .story__container {
-    margin-top: 20px;
     padding: 0;
     left: 20px;
-    bottom: 10px;
   }
 
   .story__link {
@@ -1627,8 +1700,7 @@ picture img {
 
   .about__container {
     padding: 20px;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 40px 0 0;
     text-align: left;
     width: 320px;
     display: flex;
@@ -1660,7 +1732,7 @@ picture img {
 
   .slider__container {
     width: 100%;
-    margin: 0;
+    margin: 0 0 40px;
     padding-left: 0;
   }
 
@@ -1696,7 +1768,7 @@ picture img {
   }
 
   .features {
-    min-height: 515px;
+    min-height: 655px;
     padding: 0 20px;
     background-size: cover;
   }
@@ -1706,6 +1778,7 @@ picture img {
     align-items: flex-end;
     justify-content: center;
     gap: 40px;
+    width: 100%; /* не было */
   }
 
   .features__info {
@@ -1728,7 +1801,7 @@ picture img {
   }
 
   .accordion__container {
-    width: 320px;
+    width: 100%; /* 320px */
     margin-bottom: 10px;
   }
 
@@ -1736,11 +1809,6 @@ picture img {
     font-size: 21px;
     text-align: left;
     max-width: 320px;
-  }
-
-  .accordion__title::before {
-    top: 10px;
-    left: -25px;
   }
 
   .accordion__container.active-accordion .accordion__text {
@@ -1751,6 +1819,7 @@ picture img {
     font-size: 14px;
     width: 100%;
     text-align: left;
+    margin-bottom: 0;
   }
 
   .requirements {
@@ -1847,69 +1916,9 @@ picture img {
     transform: none;
   }
 
-  .newsletter {
-    min-width: 320px;
-    min-height: 523px;
-    background-position: center;
-  }
-
-  .newsletter__container {
-    width: 320px;
-    align-items: flex-end;
-    gap: 15px;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-
-  .newsletter__subtitle {
-    font-size: 18px;
-    padding-top: 44px;
-    margin-right: 60px;
-  }
-
-  .newsletter__title {
-    font-size: 33px;
-    margin-left: 70px;
-  }
-
-  .newsletter__text {
-    font-size: 14px;
-    width: 189px;
-    margin-right: 60px;
-    margin-bottom: 10px;
-  }
-
-  .newsletter__form {
-    margin-top: 0;
-    margin-right: 50px;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .form__email {
-    min-width: 260px;
-    min-height: 44px;
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .form__text {
-    width: 178px; /* исправить? */
-    inset-block: 3px;
-    inset-inline-start: 20px;
-  }
-
-  .form__button {
-    min-width: 260px;
-    min-height: 44px;
-    font-size: 14px;
-    padding: 5px;
-    margin-left: 0;
-  }
-
   .footer {
     min-width: 320px;
-    min-height: 493px;
+    min-height: 515px;
   }
 
   .footer__container {

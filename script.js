@@ -2,10 +2,21 @@
 
 const langBtn = document.querySelector('.language__button');
 const langList = document.querySelector('.language__list');
+const langIcon = document.querySelector('.language__icon');
+
+langIcon.addEventListener('click', function() {
+    langList.classList.toggle('visibly-hidden');
+});
 
 langBtn.addEventListener('click', function() {
     langList.classList.toggle('visibly-hidden');
 });
+
+document.querySelector('.story__icon').addEventListener('click', function () {
+    document.querySelector('#about').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 
 // Слайдер about
 
