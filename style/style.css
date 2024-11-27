@@ -212,14 +212,15 @@ picture img {
   height: 35px;
   position: relative;
   padding: 5px;
+  transition: color 0.2s ease;
 }
 
-.header__link-icon img {
-  transition:  all 0.2s ease;
+.xbox-icon {
+  color: var(--accent-color);
 }
 
-.header__link-icon img:hover {
-  filter: brightness(0.8);
+.steam-icon {
+  color: var(--accent-color);
 }
 
 .header__language {
@@ -229,6 +230,7 @@ picture img {
   height: 30px;
   display: flex;
   position: relative;
+  color: inherit;
 }
 
 .header__language-btn {
@@ -249,14 +251,16 @@ picture img {
   color: var(--accent-color);
 }
 
-.header__language-btn::after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: 8px;
-  width: 10px;
-  height: 7px;
-  background: url("../img/arrow.svg") center/cover no-repeat;
+.language__icon {
+  position: relative;
+  top: 12px;
+  left: -17px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.language__icon:hover {
+  color: var(--accent-color);
 }
 
 .header__language-list {
@@ -297,7 +301,6 @@ picture img {
   align-items: center;
   justify-content: center;
 }
-
 
 .home::before { /* реализовала градиентную тень в первой секции */
   content: "";
@@ -351,7 +354,7 @@ picture img {
 .story__container {
   display: flex;
   position: absolute;
-  inset-block-end: 50px; /* 3 коммент, пофиксила позиционирование кнопки */
+  inset-block-end: 70px; /* 3 коммент, пофиксила позиционирование кнопки */
 }
 
 .story__link {
@@ -366,16 +369,19 @@ picture img {
   padding-bottom: 25px;
 }
 
-.story__link::after {
-  content: "";
-  position: absolute;
-  top: 60%;
-  right: 25px;
+.story__icon {
+  position: relative;
   width: 25px;
   height: 11px;
-  background: url("../img/scroll_down.svg") no-repeat;
+  transition: color 0.2s ease;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
 }
 
+.story__icon:hover {
+  color: var(--accent-color);
+}
 
 /* --------- ABOUT ----------- */
 
@@ -475,26 +481,25 @@ picture img {
   display: none;
 }
 
-.arrow-left {
-  margin-right: 15px;
+.arrow-left, .arrow-right {
+  position: relative;
+  width: 18px;
+  height: 38px;
   cursor: pointer;
-  padding: 5px;
-  transition: all 0.2s ease;
-}
-
-.arrow-left:hover {
-  filter: brightness(0.7);
+  transition: color 0.2s ease;
 }
 
 .arrow-right {
   margin-left: 15px;
-  cursor: pointer;
-  padding: 5px;
-  transition: all 0.2s ease;
 }
 
-.arrow-right:hover {
-  filter: brightness(0.7);
+.arrow-left {
+  margin-right: 15px;
+}
+
+.arrow-right:hover,
+.arrow-left:hover { 
+  color: var(--accent-color);
 }
 
 .block {
