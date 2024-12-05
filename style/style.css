@@ -225,14 +225,15 @@ picture img {
   height: 35px;
   position: relative;
   padding: 5px;
+  transition: color 0.2s ease;
 }
 
-.icon__img {
-  transition:  all 0.2s ease;
+.xbox-icon {
+  color: var(--accent-color);
 }
 
-.icon__img:hover {
-  filter: brightness(0.8);
+.steam-icon {
+  color: var(--accent-color);
 }
 
 .header__language {
@@ -242,6 +243,7 @@ picture img {
   min-height: 30px;
   display: flex;
   position: relative;
+  color: inherit;
 }
 
 .language__button {
@@ -265,7 +267,18 @@ picture img {
   cursor: pointer;
 }
 
-.language__icon path {
+.language__icon {
+  position: relative;
+  top: 12px;
+  left: -17px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.language__icon:hover {
+  color: var(--accent-color);
+
+.language__icon path { /* на всякий случай оставляю */
   transition: stroke 0.3s ease;
 }
 
@@ -390,16 +403,29 @@ picture img {
   padding: 5px 5px 25px;
   transition: color 0.3s ease;
 }
+.story__icon {
+  position: relative;
+  width: 25px;
+  height: 11px;
+  transition: color 0.2s ease;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
+}
 
-.story__icon path {
+.story__icon:hover {
+  color: var(--accent-color);
+}
+  
+.story__icon path { /* на всякий случай оставляю */
   transition: stroke 0.3s ease;
 }
 
-.story__link:hover {
+.story__link:hover { /* на всякий случай оставляю */
   color: var(--accent-color);
 }
 
-.story__container:hover .story__icon path {
+.story__container:hover .story__icon path { /* на всякий случай оставляю */
   stroke: var(--accent-color);
 } /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
 
@@ -507,7 +533,7 @@ picture img {
   width: 18px;
   height: 38px;
   cursor: pointer;
-  transition: stroke 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .arrow-right {
@@ -518,13 +544,9 @@ picture img {
   margin-right: 15px;
 }
 
-.arrow-right path, .arrow-left path {
-  transition: stroke 0.3s ease;
-}
-
-.arrow-right:hover path,
-.arrow-left:hover path{ 
-  stroke: var(--accent-color);
+.arrow-right:hover,
+.arrow-left:hover { 
+  color: var(--accent-color);
 }
 
 .block {
