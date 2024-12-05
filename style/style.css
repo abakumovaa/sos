@@ -122,7 +122,7 @@ picture img {
 /* ---------- HEADER -------------- */
 
 .header__wrapper {
-  background: url("../img/home_bg.jpg") center/cover no-repeat; /* /sos/img/home_bg.jpg */
+  background: url("../img/home_bg.webp") center/cover no-repeat; /* /sos/img/home_bg.jpg */
 }
 
 .header__logo {
@@ -254,7 +254,7 @@ picture img {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
-  transition: all 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 .language__icon {
@@ -265,7 +265,11 @@ picture img {
   cursor: pointer;
 }
 
-.language__icon:hover path {
+.language__icon path {
+  transition: stroke 0.3s ease;
+}
+
+.language__button:hover + .language__icon path { /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
   stroke: var(--accent-color);
 }
 
@@ -304,15 +308,30 @@ picture img {
   padding: 0 0 100px;
 }
 
-.home::before { /* реализовала градиентную тень в первой секции */
+.about::before, .features::before,
+.requirements::before, .quotes::before, .newsletter::before {
+  inset-block-start: 0;
+  background-image: linear-gradient(#0b0b0b, transparent);
+}
+
+.home::before, .about::before, .about::after,
+.features::before, .features::after,
+.requirements::before, .requirements::after,
+.quotes::before, .quotes::after,
+.newsletter::before, .newsletter::after
+ { /* реализовала градиентную тень */
   content: "";
   position: absolute;
   width: 100%;
   height: 80px;
-  inset-block-end: 0;
   inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
   z-index: 1;
+}
+
+.home::before, .about::after, .features::after, .requirements::after,
+.quotes::after, .newsletter::after {
+  inset-block-end: 0;
+  background-image: linear-gradient(0, #0b0b0b, transparent);
 }
 
 .home__container {
@@ -347,7 +366,7 @@ picture img {
   border-radius: 4px;
   margin: 0 auto;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -369,49 +388,35 @@ picture img {
   font-size: 12px;
   text-transform: uppercase;
   padding: 5px 5px 25px;
+  transition: color 0.3s ease;
 }
+
+.story__icon path {
+  transition: stroke 0.3s ease;
+}
+
+.story__link:hover {
+  color: var(--accent-color);
+}
+
+.story__container:hover .story__icon path {
+  stroke: var(--accent-color);
+} /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
 
 .story__icon {
   position: relative;
   width: 25px;
   height: 11px;
-  transition: stroke 0.2s ease;
   top: 30px;
   right: 50px;
   cursor: pointer;
 }
-
-.story__icon:hover path {
-  stroke: var(--accent-color);
-}
-
 /* --------- ABOUT ----------- */
 
 .about {
   position: relative;
   padding-top: 0;
-  background: url("../img/about_bg.jpg") center/cover no-repeat;
-}
-
-.about::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 1;
-}
-
-.about::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-end: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 1;
+  background: url("../img/about_bg.webp") center/cover no-repeat;
 }
 
 .about__container {
@@ -513,6 +518,10 @@ picture img {
   margin-right: 15px;
 }
 
+.arrow-right path, .arrow-left path {
+  transition: stroke 0.3s ease;
+}
+
 .arrow-right:hover path,
 .arrow-left:hover path{ 
   stroke: var(--accent-color);
@@ -546,29 +555,7 @@ picture img {
   padding: 0 120px;
   display: flex;
   flex-direction: column;
-  background: url("../img/features_bg.jpg") center/cover no-repeat;
-}
-
-.features::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 70px;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 1;
-}
-
-.features::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-end: 0;
-  inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 1;
+  background: url("../img/features_bg.webp") center/cover no-repeat;
 }
 
 .features__container {
@@ -693,29 +680,7 @@ picture img {
 .requirements {
   position: relative;
   flex-direction: column;
-  background: url("../img/req_bg.jpg") center/cover no-repeat;
-}
-
-.requirements::before { /* реализовала градиентную тень в первой секции */
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 70px;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 1;
-}
-
-.requirements::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-end: 0;
-  inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 1;
+  background: url("../img/req_bg.webp") center/cover no-repeat;
 }
 
 .requirements__container {
@@ -744,7 +709,6 @@ picture img {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   background-color: transparent;
-  border: 1px solid #979797;
 }
 
 .requirements__item {
@@ -752,7 +716,7 @@ picture img {
   padding: 15px 10px 10px; /* пофиксила паддинги таблицы */
 }
 
-.requirements__item-title {
+.item__title {
   font-family: "Bebas Neue", sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -762,7 +726,7 @@ picture img {
   margin: 0 0 10px;
 }
 
-.requirements__item-text {
+.item__text {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 22px;
@@ -777,29 +741,7 @@ picture img {
 .quotes {
   position: relative;
   justify-content: flex-start;
-  background: url("../img/quotes_bg.jpg") center/cover no-repeat;
-}
-
-.quotes::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 70px;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 1;
-}
-
-.quotes::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-end: 0;
-  inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 1;
+  background: url("../img/quotes_bg.webp") center/cover no-repeat;
 }
 
 .quotes__container {
@@ -963,31 +905,9 @@ picture img {
   position: relative;
   justify-content: flex-end;
   flex-direction: column;
-  background-image: url("../img/news_bg.png");
+  background-image: url("../img/news_bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.newsletter::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 70px;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background: linear-gradient(#0b0b0b, transparent);
-  z-index: 1;
-}
-
-.newsletter::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  inset-block-end: 0;
-  inset-inline: 0;
-  background: linear-gradient(0, #0b0b0b, transparent);
-  z-index: 1;
 }
 
 .newsletter__container {
@@ -1050,7 +970,7 @@ picture img {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.form__text {
+.form__label { /* form__text */
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -1149,7 +1069,8 @@ picture img {
 
 .footer__copyright {
   width: 100%;
-  max-height: 95px;
+  flex-wrap: wrap;
+  gap: 40px;
   padding: 40px 0 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
@@ -1163,18 +1084,20 @@ picture img {
   font-weight: normal;
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
-  padding-right: 10px;
+  padding: 10px;
 }
 
 .copyright__docs {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   gap: 10px;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 .copyright__item {
@@ -1289,6 +1212,10 @@ picture img {
     margin: 0 auto;
   }
 
+  .slider__top {
+    min-height: 320px;
+  }
+
   .arrow-left,
   .arrow-right {
     width: 25px;
@@ -1382,7 +1309,7 @@ picture img {
     gap: 20px;
   }
 
-  .form__text {
+  .form__label { /* form__text */
     inset-inline: 160px;
   }
 
@@ -1393,6 +1320,14 @@ picture img {
   .footer__list {
     flex-wrap: wrap;
     padding: 15px;
+  }
+
+  .copyright__text {
+    margin: 0 auto;
+  }
+
+  .copyright__docs {
+    margin: 0 auto;
   }
 }
 
@@ -1471,7 +1406,7 @@ picture img {
     padding: 10px;
   }
 
-  .requirements__item-title {
+  .item__title {
     margin: 0 0 5px;
   }
 
@@ -1512,7 +1447,7 @@ picture img {
     width: auto;
   }
 
-  .form__text {
+  .form__label { /* form__text */
     left: 3%;
     top: 10%;
     right: 0;
@@ -1529,7 +1464,7 @@ picture img {
 }
 
 @media (width <= 576px) {
-  .form__text {
+  .form__label { /* form__text */
     inset-block: 5px;
     inset-inline-start: 100px;
   }
@@ -1544,7 +1479,7 @@ picture img {
     width: 100vw;
   }
 
-  .form__text {
+  .form__label { /* form__text */
     left: 23%;
     top: 6%;
   }
@@ -1554,7 +1489,7 @@ picture img {
   }
 
   .about {
-    padding: 20px;
+    padding: 60px 20px 20px;
   }
 
   .about__container {
@@ -1580,6 +1515,10 @@ picture img {
   .docs__link:not(:last-child)::after {
     inset-block: unset;
   }
+
+  .copyright__docs {
+    flex-direction: column;
+  }
 }
 
 @media (width <= 386px) {
@@ -1600,26 +1539,29 @@ picture img {
   .newsletter__subtitle {
     font-size: 18px;
     padding-top: 44px;
-    margin-right: 60px;
+    margin-right: 70px;
   }
 
   .newsletter__title {
     font-size: 33px;
-    margin-left: 70px;
+    margin-left: 60px;
   }
 
   .newsletter__text {
     font-size: 14px;
     width: 189px;
-    margin-right: 60px;
+    margin-right: 70px;
     margin-bottom: 10px;
   }
 
   .newsletter__form {
     margin-top: 0;
-    margin-right: 50px;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .form {
+    flex-direction: column;
   }
 
   .form__email {
@@ -1629,7 +1571,7 @@ picture img {
     margin: 0;
   }
 
-  .form__text {
+  .form__label { /* form__text */
     width: 178px;
     inset-block: 3px;
     inset-inline-start: 20px;
@@ -1645,6 +1587,11 @@ picture img {
 }
 
 @media (max-width: 326px) {
+
+  .title, .subtitle {
+    font-weight: 400;
+  }
+
   .home {
     padding: 20px;
     text-align: center;
@@ -1678,7 +1625,6 @@ picture img {
 
   .story__container {
     padding: 0;
-    left: 20px;
   }
 
   .story__link {
@@ -1721,6 +1667,7 @@ picture img {
 
   .about__title::after {
     width: 150px;
+    bottom: -25px;
   }
 
   .about__text {
@@ -1771,6 +1718,7 @@ picture img {
     min-height: 655px;
     padding: 0 20px;
     background-size: cover;
+    background-position: 30%;
   }
 
   .features__container {
@@ -1779,6 +1727,19 @@ picture img {
     justify-content: center;
     gap: 40px;
     width: 100%; /* не было */
+    z-index: 1;
+  }
+
+  .features__container::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 90%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(20px);
+    pointer-events: none;
   }
 
   .features__info {
@@ -1826,10 +1787,24 @@ picture img {
     min-width: 320px;
     min-height: 719px;
     padding: 0 15px;
+    background-position: 80%;
   }
 
   .requirements__container {
     padding: 0;
+    z-index: 1;
+  }
+
+  .requirements__container::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 90%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(20px);
+    pointer-events: none;
   }
 
   .requirements__subtitle {
@@ -1858,12 +1833,12 @@ picture img {
     padding: 10px;
   }
 
-  .requirements__item-title {
+  .item__title {
     font-size: 18px;
     margin: 0 0 5px;
   }
 
-  .requirements__item-text {
+  .item__text {
     font-size: 14px;
   }
 
@@ -1878,6 +1853,7 @@ picture img {
   .quotes__container {
     margin: 0;
     padding-top: 35px;
+    align-items: flex-start;
   }
 
   .quotes__subtitle {
@@ -1896,7 +1872,7 @@ picture img {
   }
 
   .quotes__btn {
-    min-width: 216px;
+    width: 216px;
     min-height: 44px;
     font-size: 14px;
     margin: 0 auto 25px;
@@ -1905,7 +1881,7 @@ picture img {
 
   .cards__item {
     min-width: 290px;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 5px;
   }
 
@@ -1916,9 +1892,26 @@ picture img {
     transform: none;
   }
 
-  .footer {
-    min-width: 320px;
-    min-height: 515px;
+  .cards__title {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .cards__subtitle {
+    font-size: 16px;
+    top: 30px;
+  }
+
+  .cards__icon {
+    inset-block: 0;
+  }
+
+  .newsletter__title {
+    margin-left: 30px;
+  }
+
+  .newsletter__text {
+    margin-right: 60px;
   }
 
   .footer__container {
@@ -1957,10 +1950,5 @@ picture img {
 
   .copyright__text {
     font-size: 12px;
-  }
-
-  .copyright__docs {
-    width: 150px;
-    text-align: center;
   }
 }
