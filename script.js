@@ -1,18 +1,29 @@
 // Выпадающее меню
 
-const langBtn = document.querySelector('.header__language-btn');
-const langList = document.querySelector('.header__language-list');
+const langBtn = document.querySelector('.language__button');
+const langList = document.querySelector('.language__list');
+const langIcon = document.querySelector('.language__icon');
+
+langIcon.addEventListener('click', function() {
+    langList.classList.toggle('visibly-hidden');
+});
 
 langBtn.addEventListener('click', function() {
     langList.classList.toggle('visibly-hidden');
 });
+
+document.querySelector('.story__icon').addEventListener('click', function () {
+    document.querySelector('#about').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 
 // Слайдер about
 
 const arrowLeft = document.querySelector('.arrow-left');
 const arrowRight = document.querySelector('.arrow-right');
 const slides = document.querySelectorAll('.slider__image');
-const bottom = document.querySelector('.slider__container-bottom');
+const bottom = document.querySelector('.slider__bottom');
 
 let currentSlideIndex = 0;
 const paginationCircles = [];
@@ -127,15 +138,15 @@ accordions.forEach(accordion => {
 // Всплывающее меню 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.querySelector('.header__menu-btn');
-    const navPopup = document.querySelector('.header__nav-popup');
+    const menuBtn = document.querySelector('.menu__button');
+    const navPopup = document.querySelector('.header__popup');
     
     menuBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         navPopup.classList.toggle('active-popup');
     });
 
-    const popupLinks = document.querySelectorAll('.header__popup-link');
+    const popupLinks = document.querySelectorAll('.popup__link');
     popupLinks.forEach(link => {
         link.addEventListener('click', () => {
             navPopup.classList.remove('active-popup');
