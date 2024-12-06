@@ -122,7 +122,10 @@ picture img {
 /* ---------- HEADER -------------- */
 
 .header__wrapper {
-  background: url("../img/home_bg.webp") center/cover no-repeat; /* /sos/img/home_bg.jpg */
+  background: url("../img/home_bg.webp") center/cover no-repeat; 
+  @media (min-resolution: 2dppx) {
+    background: url("../img/home_bg-2x.webp") center/cover no-repeat;
+  }
 }
 
 .header__logo {
@@ -225,14 +228,15 @@ picture img {
   height: 35px;
   position: relative;
   padding: 5px;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
-.xbox-icon {
-  color: var(--accent-color);
+.xbox-icon, .steam-icon {
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
-.steam-icon {
+.xbox-icon:hover, .steam-icon:hover {
   color: var(--accent-color);
 }
 
@@ -263,28 +267,17 @@ picture img {
   position: relative;
   top: 12px;
   left: -17px;
-  transition: stroke 0.2s ease;
-  cursor: pointer;
-}
-
-.language__icon {
-  position: relative;
-  top: 12px;
-  left: -17px;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
   cursor: pointer;
 }
 
 .language__icon:hover {
   color: var(--accent-color);
-
-.language__icon path { /* на всякий случай оставляю */
-  transition: stroke 0.3s ease;
 }
 
-.language__button:hover + .language__icon path { /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
-  stroke: var(--accent-color);
-}
+.language__button:hover + .language__icon { 
+   color: var(--accent-color);
+} 
 
 .language__list {
   display: flex;
@@ -407,42 +400,28 @@ picture img {
   position: relative;
   width: 25px;
   height: 11px;
-  transition: color 0.2s ease;
   top: 30px;
   right: 50px;
   cursor: pointer;
 }
 
-.story__icon:hover {
-  color: var(--accent-color);
-}
-  
-.story__icon path { /* на всякий случай оставляю */
-  transition: stroke 0.3s ease;
-}
-
-.story__link:hover { /* на всякий случай оставляю */
+.story__link:hover { 
   color: var(--accent-color);
 }
 
-.story__container:hover .story__icon path { /* на всякий случай оставляю */
-  stroke: var(--accent-color);
+.story__container:hover .story__icon {
+  color: var(--accent-color);
 } /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
 
-.story__icon {
-  position: relative;
-  width: 25px;
-  height: 11px;
-  top: 30px;
-  right: 50px;
-  cursor: pointer;
-}
 /* --------- ABOUT ----------- */
 
 .about {
   position: relative;
   padding-top: 0;
   background: url("../img/about_bg.webp") center/cover no-repeat;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/about_bg-2x.webp") center/cover no-repeat;
+  }
 }
 
 .about__container {
@@ -578,6 +557,9 @@ picture img {
   display: flex;
   flex-direction: column;
   background: url("../img/features_bg.webp") center/cover no-repeat;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/features_bg-2x.webp") center/cover no-repeat;
+  }
 }
 
 .features__container {
@@ -703,6 +685,9 @@ picture img {
   position: relative;
   flex-direction: column;
   background: url("../img/req_bg.webp") center/cover no-repeat;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/req_bg-2x.webp") center/cover no-repeat;
+  }
 }
 
 .requirements__container {
@@ -764,6 +749,9 @@ picture img {
   position: relative;
   justify-content: flex-start;
   background: url("../img/quotes_bg.webp") center/cover no-repeat;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/quotes_bg-2x.webp") center/cover no-repeat;
+  }
 }
 
 .quotes__container {
@@ -930,6 +918,11 @@ picture img {
   background-image: url("../img/news_bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/news_bg-2x.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .newsletter__container {
