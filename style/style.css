@@ -147,9 +147,13 @@ picture img {
   font-weight: 700;
 }
 
-.logo__img {
+.header__picture {
+  display: block;
   width: 55px;
-  height: 55px; /* 4 коммент, пофиксила размер лого в хедере */
+  height: 55px;
+}
+
+.logo__img {
   object-fit: contain;
   object-position: center;
 }
@@ -271,13 +275,10 @@ picture img {
   cursor: pointer;
 }
 
-.language__icon:hover {
+.header__language:hover .language__button,
+.header__language:hover .language__icon {
   color: var(--accent-color);
 }
-
-.language__button:hover + .language__icon { 
-   color: var(--accent-color);
-} 
 
 .language__list {
   display: flex;
@@ -369,7 +370,7 @@ picture img {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 5px;
   margin: 0 auto;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -396,6 +397,7 @@ picture img {
   padding: 5px 5px 25px;
   transition: color 0.3s ease;
 }
+
 .story__icon {
   position: relative;
   width: 25px;
@@ -405,13 +407,10 @@ picture img {
   cursor: pointer;
 }
 
-.story__link:hover { 
-  color: var(--accent-color);
-}
-
+.story__container:hover .story__link,
 .story__container:hover .story__icon {
   color: var(--accent-color);
-} /* сделала, чтобы наведение на кнопку влияло и на стрелочку */
+}
 
 /* --------- ABOUT ----------- */
 
@@ -968,7 +967,7 @@ picture img {
   padding: 27px 20px 10px;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--accent-color);
@@ -977,7 +976,7 @@ picture img {
 .form__email::placeholder {
   color: var(--accent-color);
   font-size: 18px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .form__email:focus {
@@ -1140,6 +1139,22 @@ picture img {
 /* ----------------- АДАПТИВ ---------------- */
 
 @media (width <= 1192px) {
+  .features__container {
+    z-index: 1;
+  }
+
+  .features__container::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 90%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
   .quotes {
     height: auto;
     flex-direction: column;
@@ -1173,6 +1188,10 @@ picture img {
 
   .newsletter {
     background-position: right;
+  }
+
+  .footer__social {
+    margin: 0 auto;
   }
 }
 
@@ -1228,7 +1247,7 @@ picture img {
   }
 
   .slider__top {
-    min-height: 320px;
+    min-height: 520px;
   }
 
   .arrow-left,
@@ -1256,9 +1275,22 @@ picture img {
     align-items: center;
   }
 
-  .footer__social {
-    margin: 0 auto;
+  .requirements__container {
+    z-index: 1;
   }
+
+  .requirements__container::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 90%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
 }
 
 @media (width <= 801px) {
@@ -1322,10 +1354,6 @@ picture img {
     justify-content: center;
     margin-top: 33px;
     gap: 20px;
-  }
-
-  .form__label { /* form__text */
-    inset-inline: 160px;
   }
 
   .footer__logo {
@@ -1462,12 +1490,6 @@ picture img {
     width: auto;
   }
 
-  .form__label { /* form__text */
-    left: 3%;
-    top: 10%;
-    right: 0;
-  }
-
   .form__email {
     width: auto;
   }
@@ -1479,9 +1501,21 @@ picture img {
 }
 
 @media (width <= 576px) {
-  .form__label { /* form__text */
-    inset-block: 5px;
-    inset-inline-start: 100px;
+
+  .newsletter__form {
+    margin: 33px auto 0px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form__email {
+    margin: 0;
+  }
+
+  .form__button {
+    min-width: 100%;
   }
 
   .about__title::after {
@@ -1494,9 +1528,9 @@ picture img {
     width: 100vw;
   }
 
-  .form__label { /* form__text */
-    left: 23%;
-    top: 6%;
+  .header__picture {
+    width: 35px;
+    height: 35px;
   }
 
   .title {
@@ -1523,10 +1557,6 @@ picture img {
     padding: 10px;
   }
 
-  .form__email {
-    min-width: auto;
-  }
-
   .docs__link:not(:last-child)::after {
     inset-block: unset;
   }
@@ -1534,9 +1564,16 @@ picture img {
   .copyright__docs {
     flex-direction: column;
   }
+
+  .copyright__item:not(:last-child)::after {
+    display: none;
+  }
 }
 
 @media (width <= 386px) {
+  .slider__top {
+    min-height: 386px;
+  }
 
   .newsletter {
     min-width: 320px;
@@ -1580,20 +1617,19 @@ picture img {
   }
 
   .form__email {
-    min-width: 260px;
+    min-width: 290px;
     min-height: 44px;
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
   }
 
   .form__label { /* form__text */
-    width: 178px;
     inset-block: 3px;
-    inset-inline-start: 20px;
+    font-size: 12px;
   }
 
   .form__button {
-    min-width: 260px;
+    min-width: 290px;
     min-height: 44px;
     font-size: 14px;
     padding: 5px;
@@ -1660,7 +1696,7 @@ picture img {
   }
 
   .about__container {
-    padding: 20px;
+    padding: 30px 20px 0px 20px;
     margin: 40px 0 0;
     text-align: left;
     width: 320px;
@@ -1681,7 +1717,7 @@ picture img {
   }
 
   .about__title::after {
-    width: 150px;
+    width: 280px;
     bottom: -25px;
   }
 
@@ -1708,6 +1744,10 @@ picture img {
   .arrow-right {
     width: 25px;
     height: 25px;
+  }
+
+  .slider__top {
+    min-height: 320px;
   }
 
   .slider__bottom {
@@ -1742,19 +1782,6 @@ picture img {
     justify-content: center;
     gap: 40px;
     width: 100%; /* не было */
-    z-index: 1;
-  }
-
-  .features__container::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 90%, rgba(0, 0, 0, 0) 100%);
-    filter: blur(20px);
-    pointer-events: none;
   }
 
   .features__info {
@@ -1807,19 +1834,6 @@ picture img {
 
   .requirements__container {
     padding: 0;
-    z-index: 1;
-  }
-
-  .requirements__container::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 90%, rgba(0, 0, 0, 0) 100%);
-    filter: blur(20px);
-    pointer-events: none;
   }
 
   .requirements__subtitle {
@@ -1922,7 +1936,7 @@ picture img {
   }
 
   .newsletter__title {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
   .newsletter__text {
